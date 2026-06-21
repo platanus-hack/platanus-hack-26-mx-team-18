@@ -1,4 +1,8 @@
-import type { PublicacionX, OrigenX, MuestraX, PersonaPreviewX, ValidacionCandidatoX } from "./types";
+import type { Json, TablesInsert } from "../database.types";
+import type { OrigenX, PublicacionX, SanadoPublicacionX } from "./types";
+
+export const FUENTE_X = "x";
+const UMBRAL_CONFIANZA = 0.5;
 
 const PALABRAS_NO_NOMBRE = [
   "adolescente", "adolecente", "menor", "menores", "joven", "jovenes",
@@ -8,7 +12,12 @@ const PALABRAS_NO_NOMBRE = [
   "desaparecido", "desaparecida", "anonimo", "anonima", "sin",
 ];
 
-const UMBRAL_CONFIANZA = 0.5;
+type FuenteMeta = {
+  origen: string;
+  url: string;
+  confianza: number | null;
+  resumen: string | null;
+};
 
 function sinAcentos(s: string): string {
   return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -46,35 +55,46 @@ function soloFecha(v: string | null): string | null {
   return `${y}-${mes}-${d}`;
 }
 
-/** Misma lógica estricta que `scrape-firecrawl.ts` → `sanear`. */
-export function validarPublicacionX(pub: PublicacionX): ValidacionCandidatoX {
-  if (!pub.es_persona_desaparecida) {
-    return { valido: false, motivo_descarte: "no_es_persona_desaparecida" };
-  }
-  const nombre = pub.nombre?.trim();
-  if (!nombre) {
-    return { valido: false, motivo_descarte: "sin_nombre" };
-  }
-  const fecha = soloFecha(pub.fecha_desaparicion);
-  if (!fecha) {
-    return { valido: false, motivo_descarte: "sin_fecha_desaparicion" };
-  }
-  if (nombreEsGenerico(nombre)) {
-    return { valido: false, motivo_descarte: "nombre_generico" };
-  }
-  if (typeof pub.confianza === "number" && pub.confianza < UMBRAL_CONFIANZA) {
-    return { valido: false, motivo_descarte: "confianza_baja" };
-  }
-  return { valido: true, motivo_descarte: null };
+function unirTexto(a: string | null, b: string | null): string | null {
+  const A = (a || "").trim();
+  const B = (b || "").trim();
+  if (!A) return B || null;
+  if (!B) return A;
+  const al = A.toLowerCase();
+  const bl = B.toLowerCase();
+  if (al.includes(bl)) return A;
+  if (bl.includes(al)) return B;
+  return `${A} | ${B}`;
 }
 
-/** Cómo quedaría la fila en `persona` si pasara la validación. */
-export function aPersonaPreviewX(pub: PublicacionX, origen: OrigenX): PersonaPreviewX | null {
-  const validacion = validarPublicacionX(pub);
-  if (!validacion.valido) return null;
+function rasgoStr(rasgos: unknown, clave: string): string | null {
+  if (rasgos && typeof rasgos === "object" && !Array.isArray(rasgos)) {
+    const v = (rasgos as Record<string, unknown>)[clave];
+    if (typeof v === "string" && v.trim()) return v.trim();
+  }
+  return null;
+}
 
-  const nombre = pub.nombre!.trim();
-  const fecha = soloFecha(pub.fecha_desaparicion)!;
+function fuentesPrevias(rasgos: unknown): FuenteMeta[] {
+  if (rasgos && typeof rasgos === "object" && !Array.isArray(rasgos)) {
+    const meta = (rasgos as Record<string, unknown>)._meta;
+    if (meta && typeof meta === "object") {
+      const fs = (meta as Record<string, unknown>).fuentes;
+      if (Array.isArray(fs)) return fs as FuenteMeta[];
+    }
+  }
+  return [];
+}
+
+/** Misma lógica estricta que `scrape-firecrawl.ts` → `sanear`. */
+export function sanearPublicacionX(pub: PublicacionX): SanadoPublicacionX | null {
+  if (!pub.es_persona_desaparecida) return null;
+  const nombre = pub.nombre?.trim();
+  const fecha = soloFecha(pub.fecha_desaparicion);
+  if (!nombre || !fecha) return null;
+  if (nombreEsGenerico(nombre)) return null;
+  if (typeof pub.confianza === "number" && pub.confianza < UMBRAL_CONFIANZA) return null;
+
   const edad =
     typeof pub.edad === "number" && pub.edad >= 0 && pub.edad <= 120 ? pub.edad : null;
   const estatura =
@@ -82,44 +102,84 @@ export function aPersonaPreviewX(pub: PublicacionX, origen: OrigenX): PersonaPre
       ? pub.estatura_cm
       : null;
 
-  const fuenteId = pub.tweet_url ?? pub.url;
-
   return {
-    fuente: "x",
-    fuente_id: fuenteId,
     nombre,
     sexo: mapearSexo(pub.sexo),
     edad,
     estatura,
-    fecha_desaparicion: fecha,
+    fecha,
     estado: pub.estado?.trim() || null,
     municipio: pub.municipio?.trim() || null,
-    rasgos: {
-      tatuajes: pub.tatuajes?.trim() || null,
-      senas_particulares: pub.senas_particulares?.trim() || null,
-      _meta: {
-        x: {
-          origen_id: origen.id,
-          origen_tipo: origen.tipo,
-          tweet_url: pub.tweet_url,
-          texto_tweet: pub.texto_tweet,
-          fecha_publicacion: pub.fecha_publicacion,
-          autor_handle: pub.autor_handle,
-          confianza: pub.confianza,
-          resumen: pub.resumen,
-        },
-      },
-    },
   };
 }
 
-export function aMuestraX(indice: number, origen: OrigenX, pub: PublicacionX): MuestraX {
-  const validacion = validarPublicacionX(pub);
+export function fuenteIdX(pub: PublicacionX): string {
+  return pub.tweet_url ?? pub.url;
+}
+
+/** Combina rasgos existentes con los de una publicación de X. */
+export function mergeRasgosX(
+  existente: unknown,
+  pub: PublicacionX,
+  origen: OrigenX,
+): Json {
+  const base: Record<string, unknown> =
+    typeof existente === "string"
+      ? { senas_particulares: existente }
+      : existente && typeof existente === "object" && !Array.isArray(existente)
+        ? { ...(existente as Record<string, unknown>) }
+        : {};
+
+  const url = fuenteIdX(pub);
+  const fuentes = fuentesPrevias(existente).filter((f) => f.url !== url);
+  fuentes.push({
+    origen: FUENTE_X,
+    url,
+    confianza: pub.confianza,
+    resumen: pub.resumen,
+  });
+
+  const metaPrevio =
+    base._meta && typeof base._meta === "object" && !Array.isArray(base._meta)
+      ? { ...(base._meta as Record<string, unknown>) }
+      : {};
+
   return {
-    indice,
-    origen,
-    extraccion: pub,
-    validacion,
-    persona_preview: validacion.valido ? aPersonaPreviewX(pub, origen) : null,
+    ...base,
+    tatuajes: unirTexto(rasgoStr(base, "tatuajes"), pub.tatuajes),
+    senas_particulares: unirTexto(rasgoStr(base, "senas_particulares"), pub.senas_particulares),
+    _meta: {
+      ...metaPrevio,
+      fuentes,
+      x: {
+        origen_id: origen.id,
+        origen_tipo: origen.tipo,
+        tweet_url: pub.tweet_url,
+        texto_tweet: pub.texto_tweet,
+        fecha_publicacion: pub.fecha_publicacion,
+        autor_handle: pub.autor_handle,
+        confianza: pub.confianza,
+        resumen: pub.resumen,
+      },
+    },
+  } as Json;
+}
+
+export function aPersonaInsertX(
+  pub: PublicacionX,
+  origen: OrigenX,
+  s: SanadoPublicacionX,
+  lugarId: number | null,
+): TablesInsert<"persona"> {
+  return {
+    fuente: FUENTE_X,
+    fuente_id: fuenteIdX(pub),
+    nombre: s.nombre,
+    sexo: s.sexo,
+    edad: s.edad,
+    estatura: s.estatura,
+    fecha_desaparicion: s.fecha,
+    ultimo_lugar_id: lugarId,
+    rasgos: mergeRasgosX(null, pub, origen),
   };
 }

@@ -247,9 +247,8 @@ export async function recolectarCandidatosX(
     try {
       const extraidos = await scrapeFuenteX(app, fuente);
       agregar(extraidos, fuente);
-      console.log(`   📄 ${fuente.id}: ${extraidos.length} publicaciones extraídas`);
-    } catch (e) {
-      console.warn(`   ⚠️  scrape ${fuente.id}: ${(e as Error).message}`);
+    } catch {
+      // Firecrawl puede fallar por créditos o bloqueo; seguimos con la siguiente fuente.
     }
     await dormir(pausaMs);
   }
@@ -265,11 +264,8 @@ export async function recolectarCandidatosX(
       try {
         const extraidos = await buscarEnX(app, consulta, pedir);
         agregar(extraidos, { ...fuente, tipo: "busqueda" });
-        console.log(
-          `   🔍 "${consulta.slice(0, 45)}…": ${extraidos.length} resultados`,
-        );
-      } catch (e) {
-        console.warn(`   ⚠️  búsqueda falló: ${(e as Error).message}`);
+      } catch {
+        // idem
       }
       await dormir(pausaMs);
     }

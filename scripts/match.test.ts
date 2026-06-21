@@ -15,6 +15,7 @@ import {
   puntuar,
   perfilRasgos,
   PESOS,
+  PESO_PRIOR,
   type PersonaAM,
   type ForensePM,
 } from "@/lib/matching/score";
@@ -199,26 +200,30 @@ ok(puntuar(persona({ rasgos: null }), forense({ rasgos: { estatus: "x" } })).des
   "ninguna fuente reportó tatuajes -> no comparable");
 
 // ---------------------------------------------------------------------------
-// 3) Promedio ponderado SOLO de campos comparables
+// 3) Promedio ponderado CONSERVADOR (solo comparables + PESO_PRIOR)
+//    score = numerador / (pesoComparable + PESO_PRIOR)
 // ---------------------------------------------------------------------------
-console.log("\n# Promedio ponderado (solo comparables)");
+console.log("\n# Promedio ponderado conservador (solo comparables + prior)");
 
-// Todo comparable y coincidente -> score 1, denominador = suma de todos los pesos.
+// Todo comparable y coincidente -> NO llega a 1 por el prior.
 {
   const r = puntuar(persona(), forense());
   const pesoTotal = Object.values(PESOS).reduce((a, b) => a + b, 0);
-  ok(r.score === 1, "todo coincide -> score 1", String(r.score));
-  ok(r.pesoComparable === pesoTotal, "denominador = suma de todos los pesos", String(r.pesoComparable));
+  ok(casi(r.score, pesoTotal / (pesoTotal + PESO_PRIOR)),
+    "todo coincide -> pesoTotal/(pesoTotal+prior), nunca 1", String(r.score));
+  ok(r.pesoComparable === pesoTotal, "denominador base = suma de todos los pesos", String(r.pesoComparable));
+  ok(r.score < 1, "ni un match perfecto llega a 1 (conservador)", String(r.score));
 }
 
-// Solo sexo y edad comparables (ambos 1) -> score 1 con denominador acotado.
+// Solo sexo y edad comparables (ambos 1): el prior castiga la poca evidencia.
 {
   const r = puntuar(
     persona({ estatura: null, fecha_desaparicion: null, estado: null, rasgos: null }),
     forense({ estatura: null, fecha_hallazgo: null, estado: null, rasgos: null }),
   );
-  ok(r.score === 1 && r.pesoComparable === PESOS.sexo + PESOS.edad,
-    "campos no comparables se EXCLUYEN del denominador", `score=${r.score} peso=${r.pesoComparable}`);
+  const w = PESOS.sexo + PESOS.edad;
+  ok(casi(r.score, w / (w + PESO_PRIOR)) && r.pesoComparable === w,
+    "poca evidencia comparable -> score más bajo que con todos los campos", `score=${r.score} peso=${r.pesoComparable}`);
 }
 
 // Caso mixto con número esperado calculado a mano.
@@ -229,7 +234,9 @@ console.log("\n# Promedio ponderado (solo comparables)");
     persona({ sexo: "Indeterminado", edad: null, estatura: 170, fecha_desaparicion: "2020-01-01", municipio: "Guadalajara", rasgos: null }),
     forense({ estatura: 178, fecha_hallazgo: "2020-02-01", municipio: null, rasgos: null }),
   );
-  const esperado = (0 * 2 + (1 - 31 / 365) * 1 + 0.5 * 1) / 4;
+  const numerador = 0 * 2 + (1 - 31 / 365) * 1 + 0.5 * 1;
+  const pesoComparable = 2 + 1 + 1;
+  const esperado = numerador / (pesoComparable + PESO_PRIOR);
   ok(casi(r.score, esperado), "caso mixto coincide con el cálculo manual", `score=${r.score} esperado=${esperado.toFixed(5)}`);
 }
 

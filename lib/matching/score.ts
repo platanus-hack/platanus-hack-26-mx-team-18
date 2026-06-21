@@ -13,7 +13,10 @@
  *     campo por campo. El score es el PROMEDIO PONDERADO de los campos que de
  *     verdad se pueden comparar entre ambas fuentes. Un campo no comparable se
  *     EXCLUYE del cálculo (no entra ni en el numerador ni en el denominador);
- *     nunca cuenta como 0 ni como valor neutral.
+ *     nunca cuenta como 0 ni como valor neutral. El score es CONSERVADOR: al
+ *     denominador se le suma un peso previo (PESO_PRIOR) de no-coincidencia, de
+ *     modo que `score = numerador / (pesoComparable + PESO_PRIOR)`. Así ni un
+ *     match perfecto llega a 1 y los pares con poca evidencia comparable bajan.
  *
  * Se mantiene puro para reusarlo desde el script de cruce, una API o la web.
  *
@@ -42,16 +45,29 @@
 
 // ---------------------------------------------------------------------------
 // Pesos por campo. NO tienen por qué sumar nada en particular: el score se
-// normaliza dividiendo por la suma de pesos de los campos comparables.
+// normaliza dividiendo por la suma de pesos de los campos comparables (más un
+// peso "previo", ver PESO_PRIOR).
+//
+// `tatuajes` pesa POCO a propósito: comparar señas a partir de texto libre es
+// poco confiable (descripciones parciales, sinónimos, lados/zonas dispares), así
+// que aporta como pista pero no debe mandar en el score. Sexo/edad/estatura son
+// las señales más sólidas.
 // ---------------------------------------------------------------------------
 export const PESOS = {
-  tatuajes: 3,
+  tatuajes: 1,
   sexo: 2,
   edad: 2,
   estatura: 2,
   fecha: 1,
   lugar: 1,
 } as const;
+
+// Peso de una "observación previa" de NO-coincidencia que se suma SIEMPRE al
+// denominador. Hace el score conservador de dos formas: (1) ni un match perfecto
+// llega a 1, y (2) penaliza los pares con poca evidencia comparable (p.ej. solo
+// sexo+edad), que antes podían dar 1 con muy poco sustento. Subirlo = más
+// conservador; bajarlo a 0 = promedio ponderado puro.
+export const PESO_PRIOR = 3;
 
 export type Campo = keyof typeof PESOS;
 
@@ -522,7 +538,9 @@ export function puntuar(persona: PersonaAM, forense: ForensePM, pre?: PreCalculo
       pesoComparable += campo.peso;
     }
   }
-  const score = pesoComparable === 0 ? 0 : numerador / pesoComparable;
+  // Score conservador: el PESO_PRIOR (no-coincidencia) va siempre al denominador.
+  // Con esto el denominador nunca es 0 y el score nunca alcanza 1.
+  const score = numerador / (pesoComparable + PESO_PRIOR);
 
   // Resumen corto legible (para la columna `razon`): campos comparables más
   // fuertes primero.

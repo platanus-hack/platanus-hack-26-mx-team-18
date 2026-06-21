@@ -9,8 +9,13 @@
  *      par, no lo duplica). Los pares descartados en blocking no se guardan.
  *
  * Uso:
- *   pnpm match            -> guarda todos los pares candidatos (umbral 0)
- *   pnpm match 0.4        -> guarda solo candidatos con score >= 0.4
+ *   pnpm match            -> umbral 0, top 7 por persona (default)
+ *   pnpm match 0.4        -> score >= 0.4, top 7 por persona
+ *   pnpm match 0.4 10     -> score >= 0.4, top 10 por persona
+ *   pnpm match 0 0        -> sin top-N (TODOS los candidatos; OJO con el disco)
+ *
+ * El top-N por persona acota el tamaño de la tabla `coincidencias` (~personas*N)
+ * sin importar la distribución de scores, para no llenar el disco de la BD.
  */
 
 import { config as loadEnv } from "dotenv";
@@ -26,9 +31,11 @@ import type { TablesInsert } from "@/lib/types/database.types";
 
 loadEnv({ path: ".env.local" });
 
-// Score mínimo para PERSISTIR. 0 = guarda todos los candidatos (lo que pide el
-// spec). Subir si la tabla crece demasiado.
+// Score mínimo para PERSISTIR. 0 = no filtra por score.
 const UMBRAL = Number(process.argv[2] ?? 0);
+// Máximo de coincidencias a guardar POR PERSONA (las de mayor score). 0 = sin
+// límite. Acota el tamaño de la tabla para no llenar el disco de la BD.
+const TOP_N = Number(process.argv[3] ?? 7);
 
 type Supabase = ReturnType<typeof createAdminClient>;
 
@@ -106,7 +113,7 @@ async function main() {
     return { ...f, estado: lug?.estado ?? null, municipio: lug?.municipio ?? null };
   });
 
-  console.log(`📊 ${personas.length} personas vs ${forenses.length} forenses (umbral score: ${UMBRAL})`);
+  console.log(`📊 ${personas.length} personas vs ${forenses.length} forenses (umbral: ${UMBRAL} | top por persona: ${TOP_N || "∞"})`);
   if (personas.length === 0 || forenses.length === 0) {
     console.log("Falta data en alguna de las dos tablas. Nada que cruzar.");
     return;
@@ -147,6 +154,9 @@ async function main() {
       ? [...(forPorEstado.get(ep) ?? []), ...forComodin] // mismo estado + comodines
       : forenses; // persona sin estado: no bloquea por estado
 
+    // Candidatos de ESTA persona; al final nos quedamos con los TOP_N de mayor score.
+    const deLaPersona: TablesInsert<"coincidencias">[] = [];
+
     for (const forense of universo) {
       const block = pasaBlocking(persona, forense);
       if (!block.pasa) {
@@ -161,7 +171,7 @@ async function main() {
       });
       if (r.score < UMBRAL) continue;
 
-      filas.push({
+      deLaPersona.push({
         forense_id: forense.id,
         persona_id: persona.id,
         score: r.score,
@@ -170,10 +180,15 @@ async function main() {
         desglose: r.desglose as unknown as TablesInsert<"coincidencias">["desglose"],
       });
     }
+
+    // Top-N por persona (mayor score primero). TOP_N <= 0 -> sin límite.
+    deLaPersona.sort((a, b) => (b.score ?? 0) - (a.score ?? 0));
+    const mejores = TOP_N > 0 ? deLaPersona.slice(0, TOP_N) : deLaPersona;
+    for (const fila of mejores) filas.push(fila);
   }
 
   console.log(
-    `🔁 candidatos: ${candidatos.toLocaleString()} | descartados en blocking: ${descartados.toLocaleString()} | a guardar: ${filas.length.toLocaleString()}`,
+    `🔁 candidatos: ${candidatos.toLocaleString()} | descartados en blocking: ${descartados.toLocaleString()} | a guardar: ${filas.length.toLocaleString()} (top ${TOP_N || "∞"} por persona)`,
   );
   if (filas.length === 0) {
     console.log("Ningún par candidato superó el umbral. Nada que guardar.");

@@ -19,6 +19,7 @@ import {
   puntuar,
   pasaBlocking,
   perfilRasgos,
+  acotarPuntaje,
   type PersonaAM,
   type ForensePM,
 } from "@/lib/matching/score";
@@ -165,7 +166,7 @@ async function main() {
         forense_id: forense.id,
         persona_id: persona.id,
         score: r.score,
-        puntaje: Math.round(r.score * 100), // compat con `puntaje` 0-100 existente
+        puntaje: acotarPuntaje(r.puntaje),
         razon: r.resumen,
         desglose: r.desglose as unknown as TablesInsert<"coincidencias">["desglose"],
       });

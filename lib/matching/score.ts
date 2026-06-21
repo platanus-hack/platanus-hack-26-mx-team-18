@@ -117,9 +117,9 @@ export interface Resultado {
 
   // --- Campos derivados, para clientes que esperan un porcentaje 0-100 y un
   // veredicto directo (ej. la API de búsqueda). Son una VISTA de lo anterior,
-  // no recalculan nada: `puntaje` = round(score*100); `razon` = resumen (o el
+  // no recalculan nada: `puntaje` = min(99, round(score*100)); `razon` = resumen (o el
   // motivo del descarte); `descartado` = un filtro duro lo hace imposible. ---
-  puntaje: number; // 0..100
+  puntaje: number; // 0..PUNTAJE_MAX
   razon: string;
   descartado: boolean;
 }
@@ -157,6 +157,13 @@ function fechaMs(f: string | null | undefined): number | null {
 }
 
 const MS_DIA = 86_400_000;
+
+/** Tope de compatibilidad visible (0–100). Nunca mostramos 100%: es orientativo. */
+export const PUNTAJE_MAX = 99;
+
+export function acotarPuntaje(puntaje: number): number {
+  return Math.min(PUNTAJE_MAX, Math.round(puntaje));
+}
 
 function clamp01(x: number): number {
   return x < 0 ? 0 : x > 1 ? 1 : x;
@@ -553,7 +560,7 @@ export function puntuar(persona: PersonaAM, forense: ForensePM, pre?: PreCalculo
     desglose,
     pesoComparable,
     resumen,
-    puntaje: Math.round(scoreRedondeado * 100),
+    puntaje: acotarPuntaje(Math.round(scoreRedondeado * 100)),
     razon: block.pasa ? resumen : block.razon,
     descartado: !block.pasa,
   };

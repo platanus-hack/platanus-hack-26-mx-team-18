@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { puntuar, type PersonaAM, type ForensePM } from "@/lib/matching/score";
+import { rasgosATexto } from "@/lib/rasgos";
+import { validarBusqueda } from "@/lib/buscar/validacion";
+import { referenciaForense } from "@/lib/fuentes/referencia";
+import { acotarPuntaje } from "@/lib/matching/score";
 
 /**
  * POST /api/buscar
@@ -15,16 +19,31 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Cuerpo inválido" }, { status: 400 });
   }
 
+  const validacion = validarBusqueda({
+    nombre: body.nombre,
+    edad: body.edad,
+    estatura: body.estatura,
+    estado: body.estado,
+    fecha_desaparicion: body.fecha_desaparicion,
+    rasgos: body.rasgos,
+  });
+  if (!validacion.ok) {
+    return NextResponse.json({ error: validacion.mensaje }, { status: 400 });
+  }
+
+  const fechaRaw = body.fecha_desaparicion ? String(body.fecha_desaparicion) : "";
+  const fechaValida = /^\d{4}-\d{2}-\d{2}$/.test(fechaRaw) ? fechaRaw : null;
+
   const persona: PersonaAM = {
     id: -1,
     sexo: String(body.sexo ?? "Indeterminado"),
     edad: body.edad != null && body.edad !== "" ? Number(body.edad) : null,
     estatura:
       body.estatura != null && body.estatura !== "" ? Number(body.estatura) : null,
-    fecha_desaparicion: String(body.fecha_desaparicion ?? "1900-01-01"),
+    fecha_desaparicion: fechaValida,
     estado: body.estado ? String(body.estado) : null,
     municipio: body.municipio ? String(body.municipio) : null,
-    rasgos: body.rasgos ? String(body.rasgos) : null,
+    rasgos: body.rasgos ? rasgosATexto(body.rasgos) || null : null,
   };
 
   const supabase = await createClient();
@@ -33,13 +52,13 @@ export async function POST(req: Request) {
   let base = supabase
     .from("forense")
     .select(
-      "id,sexo,edad_inicial,edad_final,estatura,fecha_hallazgo,rasgos, lugar_hallazgo:lugares!forense_lugar_hallazgo_id_fkey(estado,municipio,lugar)",
+      "id,sexo,edad_inicial,edad_final,estatura,fecha_hallazgo,fuente,fuente_id,rasgos, lugar_hallazgo:lugares!forense_lugar_hallazgo_id_fkey(estado,municipio,lugar)",
     );
 
   if (persona.sexo === "Masculino" || persona.sexo === "Femenino") {
     base = base.in("sexo", [persona.sexo, "Indeterminado"]);
   }
-  if (persona.fecha_desaparicion && /^\d{4}-\d{2}-\d{2}$/.test(persona.fecha_desaparicion)) {
+  if (persona.fecha_desaparicion) {
     base = base.gte("fecha_hallazgo", persona.fecha_desaparicion);
   }
 
@@ -53,6 +72,8 @@ export async function POST(req: Request) {
     edad_final: number | null;
     estatura: number | null;
     fecha_hallazgo: string;
+    fuente: string | null;
+    fuente_id: string | null;
     rasgos: unknown;
     lugar_hallazgo: { estado: string | null; municipio: string | null; lugar: string | null } | null;
   };
@@ -83,9 +104,10 @@ export async function POST(req: Request) {
       };
       const res = puntuar(persona, forense);
       const rasgos = (r.rasgos ?? {}) as Record<string, unknown>;
+      const ref = referenciaForense(r.fuente, r.fuente_id);
       return {
         id: r.id,
-        puntaje: res.puntaje,
+        puntaje: acotarPuntaje(res.puntaje),
         razon: res.razon,
         descartado: res.descartado,
         sexo: r.sexo,
@@ -97,6 +119,8 @@ export async function POST(req: Request) {
         municipio: r.lugar_hallazgo?.municipio ?? null,
         tatuajes: typeof rasgos.tatuajes === "string" ? rasgos.tatuajes : null,
         senas: typeof rasgos.senas_particulares === "string" ? rasgos.senas_particulares : null,
+        fuenteEtiqueta: ref.etiqueta,
+        urlFuente: ref.url,
       };
     })
     .filter((m) => !m.descartado && m.puntaje > 0)

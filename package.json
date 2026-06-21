@@ -10,7 +10,8 @@
     "scrape:jalisco": "tsx scripts/scrape-jalisco.ts",
     "scrape:sinaloa": "tsx scripts/scrape-sinaloa.ts",
     "scrape:rnpdno": "tsx scripts/scrape-rnpdno.ts",
-    "match": "tsx scripts/match.ts"
+    "match": "tsx scripts/match.ts",
+    "test:match": "tsx scripts/match.test.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.0",

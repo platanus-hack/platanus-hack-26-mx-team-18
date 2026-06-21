@@ -52,8 +52,10 @@ CREATE TABLE coincidencias (
     id           SERIAL PRIMARY KEY,
     forense_id   INT NOT NULL REFERENCES forense(id) ON DELETE CASCADE,
     persona_id   INT NOT NULL REFERENCES persona(id) ON DELETE CASCADE,
-    puntaje      NUMERIC(5,2) NOT NULL CHECK (puntaje >= 0),
-    razon        TEXT,
+    puntaje      NUMERIC(5,2) NOT NULL CHECK (puntaje >= 0), -- compat: score*100 (0-100)
+    score        NUMERIC(6,5),  -- match 0..1 (promedio ponderado de campos comparables)
+    desglose     JSONB,         -- desglose por campo {comparable, similitud, explicacion}
+    razon        TEXT,          -- resumen corto legible del desglose
     creado_en    TIMESTAMPTZ NOT NULL DEFAULT now(),
     UNIQUE (forense_id, persona_id)
 );

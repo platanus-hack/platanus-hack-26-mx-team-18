@@ -203,33 +203,45 @@ ok(puntuar(persona({ rasgos: null }), forense({ rasgos: { estatus: "x" } })).des
 // ---------------------------------------------------------------------------
 console.log("\n# Promedio ponderado (solo comparables)");
 
-// Todo comparable y coincidente -> score 1, denominador = suma de todos los pesos.
+// Todo comparable y coincidente: promedio=1, denominador = suma de todos los
+// pesos. Como hay una seña IDÉNTICA, el techo sube a TECHO_CON_SEÑA=0.85 y el
+// score se ESCALA (no se corta): 1 * 0.85 = 0.85.
 {
   const r = puntuar(persona(), forense());
   const pesoTotal = Object.values(PESOS).reduce((a, b) => a + b, 0);
-  ok(r.score === 1, "todo coincide -> score 1", String(r.score));
+  ok(casi(r.score, 0.85), "todo coincide + seña idéntica -> score 0.85", String(r.score));
   ok(r.pesoComparable === pesoTotal, "denominador = suma de todos los pesos", String(r.pesoComparable));
 }
 
-// Solo sexo y edad comparables (ambos 1) -> score 1 con denominador acotado.
+// Solo sexo y edad comparables (ambos 1) -> promedio=1 con denominador acotado.
+// Sin seña comparable el techo es TECHO_SIN_SEÑA=0.5; además la COBERTURA es baja
+// (solo sexo+edad de todo el peso), así que el score baja proporcionalmente:
+// score = 1 * 0.5 * (sexo+edad)/PESO_TOTAL. Coincidir en pocos campos ya no da 50%.
 {
   const r = puntuar(
     persona({ estatura: null, fecha_desaparicion: null, estado: null, rasgos: null }),
     forense({ estatura: null, fecha_hallazgo: null, estado: null, rasgos: null }),
   );
-  ok(r.score === 1 && r.pesoComparable === PESOS.sexo + PESOS.edad,
-    "campos no comparables se EXCLUYEN del denominador", `score=${r.score} peso=${r.pesoComparable}`);
+  const pesoTotal = Object.values(PESOS).reduce((a, b) => a + b, 0);
+  const esperado = 1 * 0.5 * ((PESOS.sexo + PESOS.edad) / pesoTotal);
+  ok(casi(r.score, esperado) && r.pesoComparable === PESOS.sexo + PESOS.edad,
+    "poca cobertura -> score bajo (2 campos no dan 50%)", `score=${r.score} esperado=${esperado.toFixed(5)} peso=${r.pesoComparable}`);
 }
 
 // Caso mixto con número esperado calculado a mano.
 {
   // estatura dif 8 -> 0 (w2); fecha 31 días -> 1-31/365 (w1); lugar mismo estado sin municipio -> 0.5 (w1).
   // sexo Indeterminado, edad null, tatuajes ninguno -> no comparables.
+  // Sin seña comparable el techo es 0.5, y la COBERTURA es 4/PESO_TOTAL (solo
+  // estatura+fecha+lugar fueron comparables): score = promedio * 0.5 * cobertura.
   const r = puntuar(
     persona({ sexo: "Indeterminado", edad: null, estatura: 170, fecha_desaparicion: "2020-01-01", municipio: "Guadalajara", rasgos: null }),
     forense({ estatura: 178, fecha_hallazgo: "2020-02-01", municipio: null, rasgos: null }),
   );
-  const esperado = (0 * 2 + (1 - 31 / 365) * 1 + 0.5 * 1) / 4;
+  const pesoComparable = PESOS.estatura + PESOS.fecha + PESOS.lugar;
+  const pesoTotal = Object.values(PESOS).reduce((a, b) => a + b, 0);
+  const promedio = (0 * 2 + (1 - 31 / 365) * 1 + 0.5 * 1) / pesoComparable;
+  const esperado = promedio * 0.5 * (pesoComparable / pesoTotal);
   ok(casi(r.score, esperado), "caso mixto coincide con el cálculo manual", `score=${r.score} esperado=${esperado.toFixed(5)}`);
 }
 

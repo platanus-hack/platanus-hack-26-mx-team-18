@@ -108,6 +108,7 @@ export async function POST(req: Request) {
       return {
         id: r.id,
         puntaje: acotarPuntaje(res.puntaje),
+        score: res.score, // score fino 0..1: para ordenar sin que el redondeo a % empate todo
         razon: res.razon,
         descartado: res.descartado,
         sexo: r.sexo,
@@ -123,9 +124,13 @@ export async function POST(req: Request) {
         urlFuente: ref.url,
       };
     })
-    .filter((m) => !m.descartado && m.puntaje > 0)
-    .sort((a, b) => b.puntaje - a.puntaje)
-    .slice(0, 8);
+    // Mostramos también los de POCA coincidencia: basta que el blocking no lo
+    // descarte y que haya algo de score (>0), aunque al redondear a % dé bajo.
+    .filter((m) => !m.descartado && m.score > 0)
+    // Ordenar por el score FINO (no por el % entero): así no se "empatan" todos
+    // los candidatos demográficamente parecidos.
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 30);
 
   return NextResponse.json({ total: rows.length, matches });
 }

@@ -11,9 +11,20 @@
  *
  *  2) SCORE — `puntuar(persona, forense)` devuelve un score 0..1 y el desglose
  *     campo por campo. El score es el PROMEDIO PONDERADO de los campos que de
- *     verdad se pueden comparar entre ambas fuentes. Un campo no comparable se
- *     EXCLUYE del cálculo (no entra ni en el numerador ni en el denominador);
- *     nunca cuenta como 0 ni como valor neutral.
+ *     verdad se pueden comparar entre ambas fuentes (un campo no comparable se
+ *     EXCLUYE del cálculo: ni numerador ni denominador, nunca cuenta como 0 ni
+ *     como valor neutral), ACOTADO luego por un TECHO DE CERTEZA: el promedio
+ *     mide qué tan BIEN coincide lo comparable, pero la pura demografía nunca
+ *     identifica, así que sin una seña distintiva en común el score no pasa de
+ *     TECHO_SIN_SEÑA (ver más abajo). Esto evita el falso 99% que salía cuando
+ *     solo unos pocos campos demográficos eran comparables y coincidían.
+ *
+ *     Por último, el score se escala por la COBERTURA: qué FRACCIÓN del peso
+ *     total de campos se pudo comparar. El promedio solo dice qué tan bien
+ *     coincide lo comparable, pero coincidir en 2 datos no es tan contundente
+ *     como coincidir en 5: con poca evidencia la confianza debe ser menor. Sin
+ *     cobertura, llenar 2 campos en el buscador daba el mismo 50% que llenar
+ *     todos. Ahora coincidir en pocos campos puntúa proporcionalmente más bajo.
  *
  * Se mantiene puro para reusarlo desde el script de cruce, una API o la web.
  *
@@ -54,6 +65,11 @@ export const PESOS = {
 } as const;
 
 export type Campo = keyof typeof PESOS;
+
+// Suma de TODOS los pesos. Es el denominador de la COBERTURA (ver `puntuar`):
+// el máximo de evidencia que un par podría llegar a aportar si todos los campos
+// fueran comparables.
+const PESO_TOTAL = Object.values(PESOS).reduce((a, b) => a + b, 0);
 
 // Constantes de decaimiento (años / cm / días hasta similitud 0).
 const EDAD_DECAE_EN = 5; // años de distancia al rango forense hasta sim 0
@@ -143,6 +159,31 @@ function normalizar(texto: string | null | undefined): string {
     .trim();
 }
 
+// Variantes con que las fuentes escriben un mismo estado. La CLAVE es el texto
+// YA normalizado (minúsculas, sin acentos); el VALOR es la forma canónica. Sin
+// esto, "Distrito Federal"/"CDMX" no coinciden con "Ciudad de México" y el
+// blocking descarta TODOS los pares de la CDMX (el front se queda vacío).
+const ESTADO_CANON: Record<string, string> = {
+  cdmx: "ciudad de mexico",
+  "distrito federal": "ciudad de mexico",
+  "mexico df": "ciudad de mexico",
+  "mexico d f": "ciudad de mexico",
+  "ciudad de mexico df": "ciudad de mexico",
+  df: "ciudad de mexico",
+  "d f": "ciudad de mexico",
+  // Estado de México y sus formas cortas -> una sola clave (distinta de la CDMX).
+  "estado de mexico": "mexico",
+  "edo de mexico": "mexico",
+  "edo mexico": "mexico",
+  edomex: "mexico",
+};
+
+/** Estado normalizado y con variantes unificadas (CDMX/DF, Edo. Méx., etc.). */
+export function normalizarEstado(estado: string | null | undefined): string {
+  const n = normalizar(estado);
+  return ESTADO_CANON[n] ?? n;
+}
+
 /** Un sexo solo es comparable si se conoce y no es "Indeterminado". */
 function sexoConocido(s: string | null | undefined): boolean {
   const n = normalizar(s);
@@ -160,6 +201,18 @@ const MS_DIA = 86_400_000;
 
 /** Tope de compatibilidad visible (0–100). Nunca mostramos 100%: es orientativo. */
 export const PUNTAJE_MAX = 99;
+
+// ---------------------------------------------------------------------------
+// TECHO DE CERTEZA. El promedio ponderado mide qué tan BIEN coincide lo que se
+// pudo comparar, pero no qué tan CONTUNDENTE es esa evidencia. Coincidir en pura
+// demografía (sexo, edad, estatura, lugar, fecha) nunca identifica: mucha gente
+// la comparte. Por eso el score se acota: sin una seña distintiva en común no
+// puede pasar de TECHO_SIN_SEÑA; con un tatuaje/seña que coincide, el techo sube
+// hacia TECHO_CON_SEÑA en proporción a QUÉ TAN fuerte coincide la seña (una seña
+// que NO coincide casi no sube el techo; una idéntica lo sube del todo).
+// ---------------------------------------------------------------------------
+const TECHO_SIN_SEÑA = 0.5; // pura demografía: máx 50%
+const TECHO_CON_SEÑA = 0.85; // con seña distintiva idéntica: máx 85%
 
 export function acotarPuntaje(puntaje: number): number {
   return Math.min(PUNTAJE_MAX, Math.round(puntaje));
@@ -335,8 +388,8 @@ export function pasaBlocking(persona: PersonaAM, forense: ForensePM): BlockingRe
   }
 
   // 2) Mismo estado normalizado, cuando AMBOS lo tengan.
-  const ep = normalizar(persona.estado);
-  const ef = normalizar(forense.estado);
+  const ep = normalizarEstado(persona.estado);
+  const ef = normalizarEstado(forense.estado);
   if (ep && ef && ep !== ef) {
     return { pasa: false, razon: "estados distintos" };
   }
@@ -435,8 +488,8 @@ function scoreFecha(p: PersonaAM, f: ForensePM): CampoScore {
 
 function scoreLugar(p: PersonaAM, f: ForensePM): CampoScore {
   const peso = PESOS.lugar;
-  const ep = normalizar(p.estado);
-  const ef = normalizar(f.estado);
+  const ep = normalizarEstado(p.estado);
+  const ef = normalizarEstado(f.estado);
   if (!ep || !ef) {
     return noComparable(peso, "no comparable: falta clave geográfica (estado)");
   }
@@ -537,7 +590,29 @@ export function puntuar(persona: PersonaAM, forense: ForensePM, pre?: PreCalculo
       pesoComparable += campo.peso;
     }
   }
-  const score = pesoComparable === 0 ? 0 : numerador / pesoComparable;
+  const promedio = pesoComparable === 0 ? 0 : numerador / pesoComparable;
+
+  // Techo de certeza según la evidencia distintiva (ver TECHO_SIN_SEÑA). La
+  // "fuerza" de la seña es su similitud por encima del piso de tatuajes: una
+  // seña que solo llega al piso (no coincide) no sube el techo; una idéntica lo
+  // sube hasta TECHO_CON_SEÑA. Sin seña comparable, el techo queda en el mínimo.
+  const t = desglose.tatuajes;
+  const simSeña = t.comparable ? (t.similitud ?? 0) : 0;
+  const fuerzaSeña = clamp01((simSeña - PISO_TATUAJE) / (1 - PISO_TATUAJE));
+  const techo = TECHO_SIN_SEÑA + (TECHO_CON_SEÑA - TECHO_SIN_SEÑA) * fuerzaSeña;
+  // ESCALAR (no cortar): mapeamos el promedio al rango [0, techo] multiplicando.
+  // Un `Math.min` duro aplanaría todos los buenos candidatos al techo exacto y
+  // mataría el ranking entre ellos; el escalado preserva el orden (mejor
+  // demografía -> mayor score) y respeta el límite (promedio<=1 => score<=techo).
+  //
+  // COBERTURA: qué fracción del peso TOTAL de campos se pudo comparar. El
+  // promedio dice qué tan bien coincide lo comparable, pero no cuánto se comparó:
+  // coincidir en 2 campos no es tan contundente como coincidir en 5. Escalar por
+  // la cobertura hace que poca evidencia -> menor score (coincidir en 2 datos ya
+  // no da el mismo 50% que coincidir en todos) y preserva el ranking: a igual
+  // calidad de coincidencia, gana el par que pudo comparar más campos.
+  const cobertura = pesoComparable / PESO_TOTAL;
+  const score = promedio * techo * cobertura;
 
   // Resumen corto legible (para la columna `razon`): campos comparables más
   // fuertes primero.

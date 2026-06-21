@@ -3,54 +3,74 @@
  *
  * Dos etapas:
  *
- * Idea central (del documento del proyecto): no todas las características valen
- * igual. Un tatuaje o una seña particular es MUCHO más identificante que el
- * sexo o la estatura. Por eso cada variable tiene un "peso" distinto.
+ *  1) BLOCKING — `pasaBlocking(persona, forense)` decide si un par es siquiera
+ *     candidato. No puntúa: solo descarta imposibles, para no comparar todo
+ *     contra todo. Reglas (ver función): mismo sexo, mismo estado, y que el
+ *     hallazgo no sea anterior a la desaparición. Ante datos faltantes, DEJA
+ *     PASAR (no descarta por falta de información).
  *
- * Cómo se calcula el porcentaje (lo afinado en esta versión):
- *   1. Cada variable comparable aporta una fracción [0..1] de su peso según
- *      qué tan bien coincide (no es "todo o nada").
- *   2. El porcentaje NO es la suma cruda de puntos, sino qué proporción de la
- *      evidencia *disponible* corrobora la coincidencia:
- *          compatibilidad = puntos_obtenidos / evidencia_comparable
- *      Así, dos registros con pocos datos pero todos coincidentes no inflan el
- *      número, y dos registros con muchos datos coincidentes sí llegan alto.
- *   3. Hay un PISO de evidencia (no se puede llegar a 100% coincidiendo solo en
- *      el sexo) y un TECHO sin señas particulares (sin un rasgo distintivo en
- *      común, la certeza queda acotada por más que cuadre la demografía).
+ *  2) SCORE — `puntuar(persona, forense)` devuelve un score 0..1 y el desglose
+ *     campo por campo. El score es el PROMEDIO PONDERADO de los campos que de
+ *     verdad se pueden comparar entre ambas fuentes. Un campo no comparable se
+ *     EXCLUYE del cálculo (no entra ni en el numerador ni en el denominador);
+ *     nunca cuenta como 0 ni como valor neutral.
  *
- * Este archivo es lógica PURA (sin base de datos): se reusa en el script de
- * cruce masivo, en la API de búsqueda y en cualquier futuro cliente.
+ * Se mantiene puro para reusarlo desde el script de cruce, una API o la web.
+ *
+ * NOTA sobre tatuajes y el esquema real: el spec modela los tatuajes como
+ * conjuntos de (tipo, ubicación_cuerpo). En este repo, sin embargo, `rasgos`
+ * es un jsonb donde la fuente (IJCF Jalisco) guarda los tatuajes y señas como
+ * TEXTO LIBRE (no como pares estructurados) y el lado AM (RNPDNO) muchas veces
+ * NO trae señas. Por eso `perfilRasgos()` no aplana el texto en una sola bolsa
+ * de palabras, sino que lo separa en tres dimensiones independientes del orden:
+ * FIGURA (qué dibujo/leyenda: águila, rosa, un nombre…), ZONA corporal canónica
+ * (antebrazo≈brazo, pantorrilla≈pierna) y LADO (izquierdo/derecho). La compara-
+ * ción (ver `scoreTatuajes`) prioriza la figura —la señal fuerte— y trata la
+ * zona/lado como matices, de modo que:
+ *   - que UNA fuente reporte señas y la otra no  -> NO comparable (se excluye;
+ *     la ausencia de señas no es evidencia, no descarta el par);
+ *   - "águila en brazo" vs "águila en pierna"   -> alto (misma figura);
+ *   - "pierna izquierda" vs "pierna derecha"     -> alto (misma zona);
+ *   - figuras/zonas distintas                    -> bajo pero con piso, porque
+ *     un desacuerdo de tatuajes es evidencia DÉBIL, no motivo de descarte.
+ * Razón de NO usar un LLM aquí: el cruce evalúa muchísimos pares (blocking) y
+ * exige un score auditable y determinista; un LLM por par sería caro, lento y
+ * no reproducible. El lugar correcto para NLP/LLM es ANTES, una sola vez por
+ * registro, normalizando el texto libre a {tipo, zona, lado} estructurado que
+ * este motor luego compara de forma determinista.
  */
 
 // ---------------------------------------------------------------------------
-// Pesos: importancia relativa de cada variable. Suman 100.
-// Ajusta estos números para afinar el algoritmo.
+// Pesos por campo. NO tienen por qué sumar nada en particular: el score se
+// normaliza dividiendo por la suma de pesos de los campos comparables.
 // ---------------------------------------------------------------------------
 export const PESOS = {
-  rasgos: 45, // tatuajes y señas particulares -> lo más identificante
-  edad: 18,
-  estatura: 14,
-  sexo: 9,
-  lugar: 8,
-  fecha: 6,
+  tatuajes: 3,
+  sexo: 2,
+  edad: 2,
+  estatura: 2,
+  fecha: 1,
+  lugar: 1,
 } as const;
 
-// --- Parámetros de afinamiento ---
-const TOL_EDAD = 5; // años de tolerancia fuera del rango de edad forense
-const TOL_ESTATURA_EXACTA = 3; // cm: hasta aquí cuenta como "misma estatura"
-const TOL_ESTATURA_MAX = 12; // cm: más allá de esto, la estatura no suma
-const MAX_AÑOS_FECHA = 5; // si el hallazgo es >5 años tras la desaparición, no suma
+export type Campo = keyof typeof PESOS;
 
-// Evidencia mínima: aunque solo haya una variable comparable, el porcentaje se
-// calcula como si hubiera al menos esta cantidad de "peso" en juego. Evita que
-// coincidir únicamente en el sexo (9 pts) se vea como 100%.
-const PISO_EVIDENCIA = 50;
-// Sin ninguna seña particular en común, la certeza se acota a este techo, por
-// muy bien que cuadre la demografía (edad, estatura, lugar, fecha, sexo).
-const TECHO_SIN_SEÑAS = 75;
-// Coincidencias por debajo de esto se consideran ruido y se reportan como 0.
-const MINIMO_RELEVANTE = 8;
+// Constantes de decaimiento (años / cm / días hasta similitud 0).
+const EDAD_DECAE_EN = 5; // años de distancia al rango forense hasta sim 0
+const ESTATURA_DECAE_EN = 8; // cm de diferencia hasta sim 0
+const FECHA_DECAE_EN = 365; // días entre desaparición y hallazgo hasta sim 0
+
+// Sub-pesos INTERNOS del campo tatuajes (no confundir con PESOS.tatuajes, que
+// es el peso del campo en el promedio global). Comparamos por dimensión y la
+// FIGURA manda: un diseño compartido es la señal fuerte; zona y lado matizan.
+const SUBPESO_FIGURA = 3;
+const SUBPESO_ZONA = 1;
+const SUBPESO_LADO = 0.5;
+// Piso de similitud cuando AMBAS fuentes reportaron señas pero NO coinciden: en
+// este dominio cada fuente registra subconjuntos distintos, así que el des-
+// acuerdo es evidencia DÉBIL. El piso evita que una diferencia de tatuajes
+// hunda el score y termine descartando un par que coincide en lo demás.
+const PISO_TATUAJE = 0.25;
 
 // ---------------------------------------------------------------------------
 // Tipos de entrada (solo los campos que necesita el motor). El `estado` y el
@@ -90,9 +110,23 @@ export interface CampoScore {
 export type Desglose = Record<Campo, CampoScore>;
 
 export interface Resultado {
-  puntaje: number; // 0 a 100 (porcentaje de compatibilidad)
-  razon: string; // explicación legible de por qué coinciden
-  descartado: boolean; // true = imposible que sean la misma persona
+  score: number; // 0..1
+  desglose: Desglose;
+  pesoComparable: number; // suma de pesos que entraron al promedio (denominador)
+  resumen: string; // resumen corto legible (para la columna `razon`)
+
+  // --- Campos derivados, para clientes que esperan un porcentaje 0-100 y un
+  // veredicto directo (ej. la API de búsqueda). Son una VISTA de lo anterior,
+  // no recalculan nada: `puntaje` = round(score*100); `razon` = resumen (o el
+  // motivo del descarte); `descartado` = un filtro duro lo hace imposible. ---
+  puntaje: number; // 0..100
+  razon: string;
+  descartado: boolean;
+}
+
+export interface BlockingResultado {
+  pasa: boolean;
+  razon: string; // por qué se descartó (o "candidato" si pasa)
 }
 
 // ---------------------------------------------------------------------------
@@ -174,11 +208,8 @@ const VACIAS = new Set([
   "color", "colores", "marca", "talla", "tinta", "negro", "negra", "blanco",
   "blanca", "visible", "parte", "lado", "tipo", "presenta", "localizado",
   "localizada", "ambos", "ambas", "sobre", "tres", "dos", "cual", "cuales",
-  "leyenda", "figura", "claves", "palabras", "tono", "izquierdo", "izquierda",
-  "derecho", "derecha", "anterior", "posterior", "superior", "inferior",
-  "aproximadamente", "particular", "particulares", "senas", "seña", "señas",
-  "cuerpo", "zona", "area", "region", "pequeño", "pequena", "grande", "varios",
-  "varias", "diversos", "diversas", "tiene", "tienen", "aparente", "mismo",
+  "leyenda", "figura", "claves", "palabras", "tono", "ninguno", "ninguna",
+  "ningun", "tatuaje", "tatuajes", "tiene", "señas", "senas", "particulares",
 ]);
 
 // Token (ya normalizado, sin acentos) -> región corporal canónica. Agrupa
@@ -231,23 +262,19 @@ function clasificarTexto(texto: string | null | undefined, perfil: PerfilRasgos)
   }
 }
 
-/**
- * Raíz aproximada de una palabra (primeros 6 caracteres). Permite emparejar
- * variantes: "cicatriz"/"cicatrices", "tatuaje"/"tatuajes", "lunar"/"lunares".
- */
-function raiz(palabra: string): string {
-  return palabra.length > 6 ? palabra.slice(0, 6) : palabra;
-}
+export function perfilRasgos(rasgos: unknown): PerfilRasgos {
+  const perfil: PerfilRasgos = {
+    reporto: false,
+    figuras: new Set(),
+    zonas: new Set(),
+    lados: new Set(),
+  };
+  if (rasgos == null) return perfil;
 
-/**
- * Aplana el campo `rasgos` (jsonb) a un texto. En `forense` es un objeto
- * {tatuajes, senas_particulares, ...}; en `persona` suele ser texto libre.
- * Con `claves` se eligen solo ciertos campos (ej. los más identificantes).
- */
-export function textoDeRasgos(rasgos: unknown, claves?: string[]): string {
-  if (rasgos == null) return "";
-  if (typeof rasgos === "string") return rasgos;
-  if (typeof rasgos === "object") {
+  // Caso texto libre directo (algunas fuentes guardan `rasgos` como string).
+  if (typeof rasgos === "string") {
+    clasificarTexto(rasgos, perfil);
+  } else if (typeof rasgos === "object") {
     const obj = rasgos as Record<string, unknown>;
     for (const clave of CLAVES_RASGOS) {
       const valor = obj[clave];
@@ -322,56 +349,10 @@ export function pasaBlocking(persona: PersonaAM, forense: ForensePM): BlockingRe
 // Score por campo.
 // ---------------------------------------------------------------------------
 
-/**
- * Devuelve la compatibilidad (0-100) entre una persona y un forense.
- * Para acelerar lotes grandes se pueden pasar las palabras clave ya calculadas.
- */
-export function puntuar(
-  persona: PersonaAM,
-  forense: ForensePM,
-  pre?: { tokensPersona?: Set<string>; tokensForense?: Set<string> },
-): Resultado {
-  // --- Filtros duros: si se cumplen, es IMPOSIBLE que sean la misma persona ---
-
-  // 1) Sexos conocidos y distintos.
-  if (sexoConocido(persona.sexo) && sexoConocido(forense.sexo) && persona.sexo !== forense.sexo) {
-    return { puntaje: 0, razon: "Sexos distintos", descartado: true };
-  }
-  // 2) No se puede hallar un cuerpo ANTES de que la persona desapareciera.
-  if (persona.fecha_desaparicion > forense.fecha_hallazgo) {
-    return { puntaje: 0, razon: "Hallazgo anterior a la desaparición", descartado: true };
-  }
-
-  // `puntos` = evidencia que corrobora; `evidencia` = evidencia comparable total.
-  // El porcentaje final es puntos / evidencia (ver cabecera del archivo).
-  let puntos = 0;
-  let evidencia = 0;
-  const razones: string[] = [];
-  let huboSeña = false;
-
-  // --- Sexo: solo es comparable si AMBOS lo tienen definido ---
-  if (sexoConocido(persona.sexo) && sexoConocido(forense.sexo)) {
-    evidencia += PESOS.sexo;
-    // (los sexos distintos ya se descartaron arriba: aquí siempre coinciden)
-    puntos += PESOS.sexo;
-    razones.push(`sexo coincide (${persona.sexo})`);
-  }
-
-  // --- Edad: la persona cae dentro (o cerca) del rango estimado del forense ---
-  if (persona.edad != null && forense.edad_inicial != null) {
-    evidencia += PESOS.edad;
-    const ini = forense.edad_inicial;
-    const fin = forense.edad_final ?? forense.edad_inicial;
-    if (persona.edad >= ini && persona.edad <= fin) {
-      puntos += PESOS.edad;
-      razones.push(`edad ${persona.edad} dentro del rango ${ini}-${fin}`);
-    } else {
-      const dist = persona.edad < ini ? ini - persona.edad : persona.edad - fin;
-      if (dist <= TOL_EDAD) {
-        puntos += PESOS.edad * (1 - dist / TOL_EDAD) * 0.6;
-        razones.push(`edad ${persona.edad} cercana al rango ${ini}-${fin}`);
-      }
-    }
+function scoreSexo(p: PersonaAM, f: ForensePM): CampoScore {
+  const peso = PESOS.sexo;
+  if (!sexoConocido(p.sexo) || !sexoConocido(f.sexo)) {
+    return noComparable(peso, "no comparable: falta sexo o es Indeterminado");
   }
   const igual = normalizar(p.sexo) === normalizar(f.sexo);
   return {
@@ -382,30 +363,24 @@ export function puntuar(
   };
 }
 
-  // --- Estatura: cuanto más parecida, más fracción del peso ---
-  if (persona.estatura != null && forense.estatura != null) {
-    evidencia += PESOS.estatura;
-    const d = Math.abs(persona.estatura - forense.estatura);
-    if (d <= TOL_ESTATURA_EXACTA) {
-      puntos += PESOS.estatura;
-      razones.push(`estatura casi igual (${persona.estatura} vs ${forense.estatura} cm)`);
-    } else if (d <= TOL_ESTATURA_MAX) {
-      const factor = 1 - (d - TOL_ESTATURA_EXACTA) / (TOL_ESTATURA_MAX - TOL_ESTATURA_EXACTA);
-      puntos += PESOS.estatura * factor;
-      razones.push(`estatura parecida (${persona.estatura} vs ${forense.estatura} cm)`);
-    }
+function scoreEdad(p: PersonaAM, f: ForensePM): CampoScore {
+  const peso = PESOS.edad;
+  // Rango forense (tolera que solo venga uno de los dos extremos).
+  const fa = f.edad_inicial ?? f.edad_final;
+  const fb = f.edad_final ?? f.edad_inicial;
+  if (p.edad == null || fa == null || fb == null) {
+    return noComparable(peso, "no comparable: falta edad en alguna fuente");
   }
   const lo = Math.min(fa, fb);
   const hi = Math.max(fa, fb);
 
-  // --- Lugar: mismo estado. Señal SUAVE (suma, nunca descarta): es común que
-  // alguien desaparezca en un estado y sus restos aparezcan en otro. ---
-  if (persona.estado && forense.estado) {
-    evidencia += PESOS.lugar;
-    if (mismoEstado(persona.estado, forense.estado)) {
-      puntos += PESOS.lugar;
-      razones.push(`mismo estado (${forense.estado})`);
-    }
+  if (p.edad >= lo && p.edad <= hi) {
+    return {
+      comparable: true,
+      similitud: 1,
+      peso,
+      explicacion: `edad ${p.edad} dentro del rango ${lo}-${hi}`,
+    };
   }
   const dist = p.edad < lo ? lo - p.edad : p.edad - hi;
   const sim = clamp01(1 - dist / EDAD_DECAE_EN);
@@ -417,16 +392,27 @@ export function puntuar(
   };
 }
 
-  // --- Cercanía temporal: hallazgo poco después de la desaparición = más probable ---
-  const dias =
-    (Date.parse(forense.fecha_hallazgo) - Date.parse(persona.fecha_desaparicion)) / 86_400_000;
-  if (Number.isFinite(dias) && dias >= 0) {
-    evidencia += PESOS.fecha;
-    const años = dias / 365;
-    if (años <= MAX_AÑOS_FECHA) {
-      puntos += PESOS.fecha * (1 - años / MAX_AÑOS_FECHA);
-      if (años <= 1) razones.push("hallazgo dentro del primer año");
-    }
+function scoreEstatura(p: PersonaAM, f: ForensePM): CampoScore {
+  const peso = PESOS.estatura;
+  if (p.estatura == null || f.estatura == null) {
+    return noComparable(peso, "no comparable: falta estatura en alguna fuente");
+  }
+  const dif = Math.abs(p.estatura - f.estatura);
+  const sim = clamp01(1 - dif / ESTATURA_DECAE_EN);
+  return {
+    comparable: true,
+    similitud: sim,
+    peso,
+    explicacion: `diferencia ${dif} cm (${p.estatura} vs ${f.estatura})`,
+  };
+}
+
+function scoreFecha(p: PersonaAM, f: ForensePM): CampoScore {
+  const peso = PESOS.fecha;
+  const desap = fechaMs(p.fecha_desaparicion);
+  const hallazgo = fechaMs(f.fecha_hallazgo);
+  if (desap == null || hallazgo == null) {
+    return noComparable(peso, "no comparable: falta alguna fecha");
   }
   // La coherencia (hallazgo >= desaparición) ya se filtró en blocking; aquí
   // solo medimos cercanía. El clamp protege ante pares no filtrados.
@@ -440,22 +426,15 @@ export function puntuar(
   };
 }
 
-  // --- Rasgos: señas/tatuajes en común (lo más identificante) ---
-  // Solo es "comparable" si AMBOS describieron rasgos. Si coincide al menos una
-  // seña, libera el techo y se vuelve la evidencia más fuerte.
-  const tP = pre?.tokensPersona ?? tokensPersona(persona);
-  const tF = pre?.tokensForense ?? tokensForense(forense);
-  if (tP.size > 0 && tF.size > 0) {
-    evidencia += PESOS.rasgos;
-    const raicesF = new Set([...tF].map(raiz));
-    const comunes = [...tP].filter((t) => raicesF.has(raiz(t)));
-    if (comunes.length > 0) {
-      huboSeña = true;
-      // Rendimientos decrecientes: 1 seña ya es fuerte, varias acercan al máximo.
-      const fraccion = 1 - Math.pow(0.5, comunes.length);
-      puntos += PESOS.rasgos * fraccion;
-      razones.push(`señas en común: ${comunes.slice(0, 6).join(", ")}`);
-    }
+function scoreLugar(p: PersonaAM, f: ForensePM): CampoScore {
+  const peso = PESOS.lugar;
+  const ep = normalizar(p.estado);
+  const ef = normalizar(f.estado);
+  if (!ep || !ef) {
+    return noComparable(peso, "no comparable: falta clave geográfica (estado)");
+  }
+  if (ep !== ef) {
+    return { comparable: true, similitud: 0, peso, explicacion: "estados distintos" };
   }
   const mp = normalizar(p.municipio);
   const mf = normalizar(f.municipio);
@@ -562,15 +541,20 @@ export function puntuar(persona: PersonaAM, forense: ForensePM, pre?: PreCalculo
       .map(([nombre, c]) => `${nombre}=${(c.similitud ?? 0).toFixed(2)}`)
       .join(" ") || "sin campos comparables";
 
-  // --- Normalización a porcentaje de compatibilidad ---
-  const base = Math.max(evidencia, PISO_EVIDENCIA);
-  let compat = (puntos / base) * 100;
-  if (!huboSeña) compat = Math.min(compat, TECHO_SIN_SEÑAS);
-  if (compat < MINIMO_RELEVANTE) compat = 0;
+  // Veredicto duro reutilizando las mismas reglas del blocking (sexos conocidos
+  // distintos, estados distintos, hallazgo anterior a la desaparición). Se
+  // calcula aparte para NO alterar el desglose: un par imposible igual reporta
+  // su similitud campo por campo, solo que marcado como descartado.
+  const block = pasaBlocking(persona, forense);
+  const scoreRedondeado = Math.round(score * 1e5) / 1e5; // 5 decimales (numeric(6,5))
 
   return {
-    puntaje: Math.round(compat * 100) / 100, // 2 decimales (columna numeric(5,2))
-    razon: razones.join("; ") || "Sin coincidencias relevantes",
-    descartado: false,
+    score: scoreRedondeado,
+    desglose,
+    pesoComparable,
+    resumen,
+    puntaje: Math.round(scoreRedondeado * 100),
+    razon: block.pasa ? resumen : block.razon,
+    descartado: !block.pasa,
   };
 }

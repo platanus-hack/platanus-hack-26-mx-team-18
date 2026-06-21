@@ -60,41 +60,47 @@ export type Database = {
       };
       forense: {
         Row: {
-          actualizado_en: string;
-          creado_en: string;
-          edad_final: number | null;
-          edad_inicial: number | null;
-          estatura: number | null;
-          fecha_hallazgo: string;
-          id: number;
-          lugar_hallazgo_id: number | null;
-          rasgos: Json | null;
-          sexo: Sexo;
-        };
+          actualizado_en: string
+          creado_en: string
+          edad_final: number | null
+          edad_inicial: number | null
+          estatura: number | null
+          fecha_hallazgo: string
+          fuente: string | null
+          fuente_id: string | null
+          id: number
+          lugar_hallazgo_id: number | null
+          rasgos: Json | null
+          sexo: string
+        }
         Insert: {
-          actualizado_en?: string;
-          creado_en?: string;
-          edad_final?: number | null;
-          edad_inicial?: number | null;
-          estatura?: number | null;
-          fecha_hallazgo: string;
-          id?: number;
-          lugar_hallazgo_id?: number | null;
-          rasgos?: Json | null;
-          sexo: Sexo;
-        };
+          actualizado_en?: string
+          creado_en?: string
+          edad_final?: number | null
+          edad_inicial?: number | null
+          estatura?: number | null
+          fecha_hallazgo: string
+          fuente?: string | null
+          fuente_id?: string | null
+          id?: number
+          lugar_hallazgo_id?: number | null
+          rasgos?: Json | null
+          sexo: string
+        }
         Update: {
-          actualizado_en?: string;
-          creado_en?: string;
-          edad_final?: number | null;
-          edad_inicial?: number | null;
-          estatura?: number | null;
-          fecha_hallazgo?: string;
-          id?: number;
-          lugar_hallazgo_id?: number | null;
-          rasgos?: Json | null;
-          sexo?: Sexo;
-        };
+          actualizado_en?: string
+          creado_en?: string
+          edad_final?: number | null
+          edad_inicial?: number | null
+          estatura?: number | null
+          fecha_hallazgo?: string
+          fuente?: string | null
+          fuente_id?: string | null
+          id?: number
+          lugar_hallazgo_id?: number | null
+          rasgos?: Json | null
+          sexo?: string
+        }
         Relationships: [
           {
             foreignKeyName: "forense_lugar_hallazgo_id_fkey";
@@ -107,56 +113,68 @@ export type Database = {
       };
       lugares: {
         Row: {
-          id: number;
-          lugar: string;
-        };
+          estado: string | null
+          id: number
+          lugar: string
+          municipio: string | null
+        }
         Insert: {
-          id?: number;
-          lugar: string;
-        };
+          estado?: string | null
+          id?: number
+          lugar: string
+          municipio?: string | null
+        }
         Update: {
-          id?: number;
-          lugar?: string;
-        };
-        Relationships: [];
-      };
+          estado?: string | null
+          id?: number
+          lugar?: string
+          municipio?: string | null
+        }
+        Relationships: []
+      }
       persona: {
         Row: {
-          actualizado_en: string;
-          creado_en: string;
-          edad: number | null;
-          estatura: number | null;
-          fecha_desaparicion: string;
-          id: number;
-          nombre: string;
-          rasgos: Json | null;
-          sexo: Sexo;
-          ultimo_lugar_id: number | null;
-        };
+          actualizado_en: string
+          creado_en: string
+          edad: number | null
+          estatura: number | null
+          fecha_desaparicion: string
+          fuente: string | null
+          fuente_id: string | null
+          id: number
+          nombre: string
+          rasgos: Json | null
+          sexo: string
+          ultimo_lugar_id: number | null
+        }
         Insert: {
-          actualizado_en?: string;
-          creado_en?: string;
-          edad?: number | null;
-          estatura?: number | null;
-          fecha_desaparicion: string;
-          id?: number;
-          nombre: string;
-          rasgos?: Json | null;
-          sexo: Sexo;
-          ultimo_lugar_id?: number | null;
-        };
+          actualizado_en?: string
+          creado_en?: string
+          edad?: number | null
+          estatura?: number | null
+          fecha_desaparicion: string
+          fuente?: string | null
+          fuente_id?: string | null
+          id?: number
+          nombre: string
+          rasgos?: Json | null
+          sexo: string
+          ultimo_lugar_id?: number | null
+        }
         Update: {
-          actualizado_en?: string;
-          creado_en?: string;
-          edad?: number | null;
-          estatura?: number | null;
-          fecha_desaparicion?: string;
-          id?: number;
-          nombre?: string;
-          rasgos?: Json | null;
-          sexo?: string;
-          ultimo_lugar_id?: number | null;
-        };
+          actualizado_en?: string
+          creado_en?: string
+          edad?: number | null
+          estatura?: number | null
+          fecha_desaparicion?: string
+          fuente?: string | null
+          fuente_id?: string | null
+          id?: number
+          nombre?: string
+          rasgos?: Json | null
+          sexo?: string
+          ultimo_lugar_id?: number | null
+        }
         Relationships: [
           {
             foreignKeyName: "persona_ultimo_lugar_id_fkey";

@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "scrape:jalisco": "tsx scripts/scrape-jalisco.ts",
+    "scrape:sinaloa": "tsx scripts/scrape-sinaloa.ts",
     "scrape:rnpdno": "tsx scripts/scrape-rnpdno.ts",
     "match": "tsx scripts/match.ts"
   },

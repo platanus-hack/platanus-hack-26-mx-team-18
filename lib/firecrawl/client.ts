@@ -42,7 +42,8 @@ export type CandidatoPersona = {
 // Esquema (JSON Schema) que le pasamos a Firecrawl para que extraiga datos
 // estructurados de cada resultado. Todo es opcional/nullable: preferimos un
 // null honesto a un dato inventado.
-const ESQUEMA_EXTRACCION = {
+/** Esquema JSON Schema compartido para extraer datos de persona desaparecida. */
+export const ESQUEMA_EXTRACCION = {
   type: "object",
   properties: {
     es_persona_desaparecida: {
@@ -78,7 +79,7 @@ const ESQUEMA_EXTRACCION = {
   required: ["es_persona_desaparecida"],
 } as const;
 
-const PROMPT_EXTRACCION =
+export const PROMPT_EXTRACCION =
   "Esta página fue encontrada al buscar a una persona desaparecida en México. " +
   "Extrae los datos de la persona desaparecida que describe. Si la página NO trata " +
   "sobre una persona desaparecida (por ejemplo: un cuerpo o restos hallados, una nota " +

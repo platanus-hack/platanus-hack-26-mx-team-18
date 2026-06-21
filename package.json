@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "scrape:jalisco": "tsx scripts/scrape-jalisco.ts",
+    "scrape:rnpdno": "tsx scripts/scrape-rnpdno.ts",
+    "match": "tsx scripts/match.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.0",
@@ -16,9 +19,14 @@
     "react-dom": "^19.2.7"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
     "@types/node": "^26.0.0",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
+    "cheerio": "^1.2.0",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^17.4.2",
+    "tsx": "^4.22.4",
     "typescript": "^6.0.3"
   }
 }

@@ -1,0 +1,189 @@
+{
+  "mes": "enero",
+  "anio": 2023,
+  "total_pdfs_procesados": 14,
+  "results": [
+    {
+      "archivo": "0E330BF3-91F1-436B-A874-23C18F744104.pdf",
+      "datos": {
+        "nombre": "LEONEL ROJO ASTORGA",
+        "edad": 41,
+        "altura": "180 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "2019-06-20",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO MEDIANO ONDULADO, OJOS: CAFÉS PEQUEÑOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: GRUESOS",
+        "senas_particulares": "OTRO SIN ESPECIFICAR LADO IZQUIERDO, OTRO SIN ESPECIFICAR LADO DERECHO, TATUAJE LADO DERECHO, LUNARES O MANCHAS LADO DERECHO, CICATRIZ LADO IZQUIERDO",
+        "prendas_vestir": "PANTALÓN COLOR: AZUL, PLAYERA COLOR: GRIS"
+      }
+    },
+    {
+      "archivo": "20C886C9-C8BF-47D6-B28B-89077AD59E20.pdf",
+      "datos": {
+        "nombre": "CESAR ROSARIO SANDOVAL AGUIRRE",
+        "edad": 50,
+        "altura": "180cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "02/01/2023",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: OVALADO, COLOR DE LA PIEL: BLANCO, CABELLO: NEGRO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: NO RECUERDA, BOCA: GRANDE, LABIOS: GRUESOS",
+        "senas_particulares": "CICATRIZ SIN ESPECIFICAR LADO UNICO",
+        "prendas_vestir": "PANTALÓN, COLOR: AZUL CIELO; PLAYERA, COLOR: BLANCO; TENIS, COLOR: GRIS"
+      }
+    },
+    {
+      "archivo": "21AC1FF0-59BE-47D0-B268-77F341595E95.pdf",
+      "datos": {
+        "nombre": "FRANCISCO LIMON VALDIVIA",
+        "edad": 36,
+        "altura": "162cm",
+        "sexo": "hombre",
+        "fecha_hechos": "No especificada",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: GRUESOS",
+        "senas_particulares": "ARETES/PERFORACIONES SIN ESPECIFICAR LADO UNICO, TATUAJE SIN ESPECIFICAR LADO UNICO, CICATRIZ SIN ESPECIFICAR LADO UNICO",
+        "prendas_vestir": "PRENDA DE VESTIR: CHAMARRA, COLOR: NEGRO"
+      }
+    },
+    {
+      "archivo": "326790AF-CCA1-404B-8CC3-66E0D4EBEC3B.pdf",
+      "datos": {
+        "nombre": "CRISTHIAN ALBERTO LEYVA LAUREAN",
+        "edad": 27,
+        "altura": "165 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "03/01/2023",
+        "caracteristicas_fisicas": "DELGA, OVALADO, TRIGUEÑO, CABELLO Castaño oscuro corto liso, OJOS CAFÉS MEDIANOS, NARIZ ALOMADA, BOCA GRANDE, LABIOS MEDIANOS",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PANTALÓN NEGRO, PLAYERA NEGRA, SUDADERA VERDE, TENIS NEGROS"
+      }
+    },
+    {
+      "archivo": "403ED079-996C-4942-9904-8B023716BD09.pdf",
+      "datos": {
+        "nombre": "JORGE FRANCISCO SOBERANEZ SANCHEZ",
+        "edad": 25,
+        "altura": "180cm",
+        "sexo": "hombre",
+        "fecha_hechos": "",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO NO RECUERDA ONDULADO, OJOS: CAFÉS GRANDES, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: GRUESOS",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "64DD8F7B-6861-41EF-A07D-AAF530991FF7.pdf",
+      "datos": {
+        "nombre": "MARIO ANTONIO REYES ZAMUDIO",
+        "edad": 43,
+        "altura": "175 cm",
+        "sexo": "desconocido",
+        "fecha_hechos": "desconocida",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO LISO, OJOS: CAFÉS GRANDES, NARIZ: ACHATADA, BOCA: MEDIANA, LABIOS: DELGADOS, PESO: 95 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PANTALÓN, COLOR: NEGRO; PLAYERA, COLOR: AZUL MARINO; TENIS, COLOR: BLANCO"
+      }
+    },
+    {
+      "archivo": "8959F724-F272-4498-AD87-840911E87EAB.pdf",
+      "datos": {
+        "nombre": "JOSE FRANCISCO VALENZUELA VERDUGO",
+        "edad": 30,
+        "altura": "160cm",
+        "sexo": "hombre",
+        "fecha_hechos": "Fecha de Consulta: 20/6/2026",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO LISO, OJOS: CAFÉS GRANDES, NARIZ: RECTAS, BOCA: PEQUEÑA, LABIOS: DELGADOS, PESO: 65kg",
+        "senas_particulares": "OTRO SIN ESPECIFICAR LADO DERECHO, TATUAJE LADO IZQUIERDO, CICATRIZ SIN ESPECIFICAR LADO IZQUIERDO",
+        "prendas_vestir": "PANTALÓN: AZUL, PLAYERA: NEGRO, TENIS: NEGRO"
+      }
+    },
+    {
+      "archivo": "982D1D97-56D4-49F6-A9F4-3BAB73F183F5.pdf",
+      "datos": {
+        "nombre": "CARLOS ALAN ZATARAIN SOTO",
+        "edad": 46,
+        "altura": "185 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "02/07/2022",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: CUADRADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO ONDULADO, OJOS: CAFÉS MEDIANOS, NARIZ: ACHATADA, BOCA: GRANDE, LABIOS: MEDIANOS, PESO: 90 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PANTALÓN: NEGRO, PLAYERA: BLANCO, TENIS: GRIS"
+      }
+    },
+    {
+      "archivo": "9A6AC7B4-200F-4A07-882D-54F7E517467A.pdf",
+      "datos": {
+        "nombre": "LUIS ALBERTO MUÑOZ RODRIGUEZ",
+        "edad": 36,
+        "altura": "183 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: REDONDO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: ACHATADA, BOCA: MEDIANA, LABIOS: DELGADOS, PESO: 98 kg",
+        "senas_particulares": "ARETES/PERFORACIONES SIN ESPECIFICAR LADO UNICO, TATUAJE SIN ESPECIFICAR LADO UNICO, CICATRIZ SIN ESPECIFICAR LADO UNICO, LUNARES O MANCHAS SIN ESPECIFICAR LADO DERECHO",
+        "prendas_vestir": "PRENDA DE VESTIR: SHORTS, COLOR: NEGRO"
+      }
+    },
+    {
+      "archivo": "A9E08B70-443D-4ECA-9F8C-906BDA3C7016.pdf",
+      "datos": {
+        "nombre": "JESUS GUILLERMO LOPEZ FRANQUEZ",
+        "edad": 26,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "AF094CFE-6229-41BB-95D7-6A5EEBFB23FD.pdf",
+      "datos": {
+        "nombre": "CARLOS MIGUEL QUEVEDO YAÑEZ",
+        "edad": 48,
+        "altura": "165 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "28/01/2023",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: REDONDO, COLOR DE LA PIEL: TRIGUEÑO, CABELLO: NEGRO CORTO LISO, OJOS: NEGROS MEDIANOS, NARIZ: ACHATADA, BOCA: MEDIANA, LABIOS: MEDIANOS, PESO: 78 kg",
+        "senas_particulares": "TATUAJE SIN ESPECIFICAR LADO IZQUIERDO",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "B1D2F1A4-509C-49D7-84F1-B8F73B48B444.pdf",
+      "datos": {
+        "nombre": "JOSE LUIS LOPEZ",
+        "edad": 81,
+        "altura": "165 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "18/12/2022",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO,COLOR DE LA PIEL: TRIGUEÑO,CABELLO: CANO CORTO LISO,OJOS: NEGROS MEDIANOS,NARIZ: RECTA,BOCA: MEDIANA,LABIOS: DELGADOS,PESO:58 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PANTALÓN COLOR: AZUL, PLAYERA COLOR: VERDE, TENIS COLOR: BLANCO"
+      }
+    },
+    {
+      "archivo": "D50FBA0E-D664-4DE6-B75E-98527DEBBFF3.pdf",
+      "datos": {
+        "nombre": "JOSE ANGEL ACOSTA BENITEZ",
+        "edad": 0,
+        "altura": "170cm",
+        "sexo": "hombre",
+        "fecha_hechos": "2026-06-20",
+        "caracteristicas_fisicas": "COMPLEXION:DELGADA, CARA:OVALADO, COLOR DE LA PIEL:BLANCO, CABELLO:CASTAÑO OSCURO MEDIANO ONDULADO, OJOS:MIEL GRANDES, NARIZ:RECTA, BOCA:PEQUEÑA, LABIOS:DELGADOS, PESO:72kg",
+        "senas_particulares": "CICATRIZ SIN ESPECIFICAR, LUNARES O MANCHAS SIN ESPECIFICAR LADO DERECHO, CICATRIZ LADO IZQUIERDO",
+        "prendas_vestir": "PANTALÓN AZUL, PLAYERA AZUL MARINO, TENIS NEGRO"
+      }
+    },
+    {
+      "archivo": "F25B5BAF-19D9-437E-A4C4-9E0DA6ED9A76.pdf",
+      "datos": {
+        "nombre": "MARCO ANTONIO CORTEZ VIGUERIA",
+        "edad": 25,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    }
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "mes": "junio",
+  "anio": 2026,
+  "total_pdfs_procesados": 22,
+  "results": [
+    {
+      "archivo": "049F7D8A-0864-47AE-A546-3B9A9263DEAA.pdf",
+      "datos": {
+        "nombre": "EDGAR ALEJANDRO FLORES CORRALES",
+        "edad": 33,
+        "altura": "SIN DATO",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "02/06/2022",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "04F41A5B-01DB-4715-9D3C-825DAE096D13.pdf",
+      "datos": {
+        "nombre": "JOAQUIN JOSE MORENO MARISCAL",
+        "edad": 37,
+        "altura": "165 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "06/06/2022",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: CUADRADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO ONDULADO, OJOS: CAFÉS GRANDES, NARIZ: RECTAS, BOCA: MEDIANA, LABIOS: MEDIANOS, PESO: 70 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PRENDA DE VESTIR: PANTALÓN, COLOR: GUINDA"
+      }
+    },
+    {
+      "archivo": "0CB2E66B-9C05-428F-AEE7-A7BC698D84FE.pdf",
+      "datos": {
+        "nombre": "MARIA GUADALUPE COTA ALVARADO",
+        "edad": 35,
+        "altura": "165 cm",
+        "sexo": "mujer",
+        "fecha_hechos": "15/06/2022",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: OVALADO, COLOR DE LA PIEL: TRIGUEÑO, CABELLO: NEGRO CORTO LISO, OJOS: NEGROS PEQUEÑOS, NARIZ: ACHATADA, BOCA: PEQUEÑA, LABIOS: DELGADOS, PESO: 100 kg",
+        "senas_particulares": "CICATRIZ EN CABEZA LADO UNICO",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "1A321202-8A38-4A20-82C1-130B9D11DE1A.pdf",
+      "datos": {
+        "nombre": "JOSE DE JESUS RIOS BARRIOS",
+        "edad": 31,
+        "altura": "165 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "11/06/2022",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO LISO, OJOS: CAFÉS GRANDES, NARIZ: ACHATADA, BOCA: MEDIANA, LABIOS: GRUESOS, PESO:70kg",
+        "senas_particulares": "TATUAJE LADO UNICO",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "1A7A9A0C-F2D6-4DA9-A3BF-4F0CE363C435.pdf",
+      "datos": {
+        "nombre": "KATHERINE ALEXIA VILLALEJOS COTA",
+        "edad": 7,
+        "altura": "100 cm",
+        "sexo": "mujer",
+        "fecha_hechos": "15/06/2022",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: REDONDO, COLOR DE LA PIEL: BLANCO, CABELLO: CASTAÑO CLARO CORTO LISO, OJOS: CAFÉS MEDIANOS, BOCA: PEQUEÑA, LABIOS: DELGADOS, ESTATURA: 100cm,PESO:17kg",
+        "senas_particulares": "CICATRIZ EN CARA LADO DERECHO,LUNARES O MANCHAS EN BOCA LADO UNICO",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "2183D9B8-1772-4775-AAA5-829C67EDA23B.pdf",
+      "datos": {
+        "nombre": "RODRIGO MAURICIO MARTINEZ MENDEZ",
+        "edad": 39,
+        "altura": "170 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "01/06/2022",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: OVALADO, COLOR DE LA PIEL: TRIGUEÑO, CABELLO: NEGRO CORTO, OJOS: CAFÉS MEDIANOS, NARIZ: NO RECUERDA, BOCA: MEDIANA, LABIOS: MEDIANOS",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "3A836C67-B077-4A76-B508-86E686599853.pdf",
+      "datos": {
+        "nombre": "DANIEL ABRAHAM VILLALEJOS COTA",
+        "edad": 11,
+        "altura": "120 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "12/06/2022",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: REDONDO, COLOR DE LA PIEL: BLANCO, CABELLO: CASTAÑO CLARO CORTO LISO, OJOS: CAFÉS MEDIANOS, BOCA: PEQUEÑA, LABIOS: DELGADOS, PESO: 30 kg",
+        "senas_particulares": "CICATRIZ EN CABEZA LADO DERECHO",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "428DADDA-E1FA-45C8-B4A8-7FA1F0CDEE1B.pdf",
+      "datos": {
+        "nombre": "JUAN CARLOS PONCE ESPARZA",
+        "edad": 0,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "51459081-44EA-465E-BA7D-9855686D8047.pdf",
+      "datos": {
+        "nombre": "ISSAC EZEQUIEL ACOSTA AVILA",
+        "edad": 21,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "52853D33-820B-4C83-B3A0-9004E78BFC3A.pdf",
+      "datos": {
+        "nombre": "FRANCISCO JAVIER ALVAREZ MORALES",
+        "edad": 56,
+        "altura": "1.89 m",
+        "sexo": "hombre",
+        "fecha_hechos": "27/06/2022",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO LISO, OJOS: CAFÉS PEQUEÑOS, NARIZ: DESV. DERECHA, BOCA: GRANDE, LABIOS: GRUESOS, PESO: 90 kg",
+        "senas_particulares": "LUNARES O MANCHAS EN BRAZO LADO DERECHO, CICATRIZ EN PIE LADO DERECHO",
+        "prendas_vestir": "CAMISA: BLANCO, PANTALÓN: AZUL, ZAPATOS: AZUL"
+      }
+    },
+    {
+      "archivo": "9E9D6B32-CC5A-4938-867A-471198AB1E5B.pdf",
+      "datos": {
+        "nombre": "MIGUEL ALBERTO COTA ROSAS",
+        "edad": 57,
+        "altura": "1.57 m",
+        "sexo": "hombre",
+        "fecha_hechos": "06/11/2021",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: TRIGUEÑO, NARIZ: RECTA, BOCA: PEQUEÑA, PESO: 60kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PANTALÓN: AZUL, PLAYERA: ROJO, ZAPATOS: CAFÉ"
+      }
+    },
+    {
+      "archivo": "B95EDBAE-8745-48C2-B097-85787EB6294C.pdf",
+      "datos": {
+        "nombre": "Marco Cesar Campos Bojorquez",
+        "edad": 0,
+        "altura": "1.70 m",
+        "sexo": "no especificado",
+        "fecha_hechos": "no especificado",
+        "caracteristicas_fisicas": "Complexión: mediana, cara: ovalado, color de la piel: trigueño, ojos: cafés grandes, boca: grande, labios: gruesos, altura: 170 cm, peso: 75 kg",
+        "senas_particulares": "Otro sin especificar lado derecho, cicatriz sin especificar lado izquierdo, tatuaje sin especificar lado derecho, tatuaje sin especificar lado izquierdo, lunares o manchas sin especificar lado derecho",
+        "prendas_vestir": "Prenda de vestir: camisa, color: negro; prenda de vestir: pantalón, color: azul marino; prenda de vestir: tenis, color: negro"
+      }
+    },
+    {
+      "archivo": "BB306C65-2F6F-4E1F-ACE9-422D8C6A8889.pdf",
+      "datos": {
+        "nombre": "JOSE MARIA BOJORQUEZ OBESO",
+        "edad": 32,
+        "altura": "160 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "07/05/2012",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: REDONDO, COLOR DE LA PIEL: MORENO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: PEQUEÑA, LABIOS: DELGADOS, PESO: 80 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "CFE6DA84-D1F4-4653-A332-0F8E753F1F64.pdf",
+      "datos": {
+        "nombre": "LUIS ALBERTO RAMIREZ DOMINGUEZ",
+        "edad": 42,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "DDA9602A-CA71-4044-AEA8-528BB992353A.pdf",
+      "datos": {
+        "nombre": "RODOLFO ALEJANDRO AGUILAR CHIQUETE",
+        "edad": 39,
+        "altura": "170cm",
+        "sexo": "hombre",
+        "fecha_hechos": "27/06/2022",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO ONDULADO, OJOS: NEGROS GRANDES, NARIZ: ALOMADA, BOCA: GRANDE, LABIOS: GRUESOS, PESO: 64kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "E60356AF-056D-42A6-A3EA-DD39DF1CD5A4.pdf",
+      "datos": {
+        "nombre": "LUIS ALONSO TAPIA BORBOA",
+        "edad": 27,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "CICATRIZ EN ABDOMEN LADO IZQUIERDO, CICATRIZ EN MUSLO LADO IZQUIERDO, CICATRIZ EN RODILLA LADO IZQUIERDO",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "E86C364D-3E08-4C44-91CE-BCB4207CBCFF.pdf",
+      "datos": {
+        "nombre": "JOANNA DESIREE HERRERA VILLANUEVA",
+        "edad": 22,
+        "altura": "1.63 m",
+        "sexo": "mujer",
+        "fecha_hechos": "22/07/2020",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: TRIGUEÑO, CABELLO: NEGRO LARGO ONDULADO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTRA, BOCA: PEQUEÑA, LABIOS: MEDIANOS, ESTATURA: 163 cm, PESO: 60 kg",
+        "senas_particulares": "CICATRIZ SIN ESPECIFICAR LADO IZQUIERDO",
+        "prendas_vestir": "BLUSA, PANTIBLUSA, BLUSON, COLOR: BEIGE; PANTALÓN; TENIS, COLOR: NEGRO"
+      }
+    },
+    {
+      "archivo": "EA2957F6-8EEC-4075-95A2-34764558561B.pdf",
+      "datos": {
+        "nombre": "JESUS SANTIAGO SALOMON LOZOYA",
+        "edad": 34,
+        "altura": "1.75 m",
+        "sexo": "hombre",
+        "fecha_hechos": "No especificada",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: MEDIANOS, PESO: 75kg",
+        "senas_particulares": "CICATRIZ, TATUAJE SIN ESPECIFICAR LADO DERECHO, TATUAJE SIN ESPECIFICAR LADO IZQUIERDO",
+        "prendas_vestir": "BOTAS, COLOR: CAFÉ; PANTALÓN, COLOR: AZUL; PLAYERA, COLOR: NEGRO"
+      }
+    },
+    {
+      "archivo": "F07497F9-5A56-4825-B9ED-EACAE46C554A.pdf",
+      "datos": {
+        "nombre": "MARIO EDUARDO SALAS RENTERIA",
+        "edad": 31,
+        "altura": "170 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "fecha no especificada",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO LISO, OJOS: CAFÉS GRANDES, NARIZ: RECTA, BOCA: GRANDE, LABIOS: GRUESOS",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PLAYERA, COLOR: AZUL MARINO; SHORTS, COLOR: BEIGE; TENIS, COLOR: ROJO"
+      }
+    },
+    {
+      "archivo": "F3FA9F8E-F147-43A8-B6A0-93766011DE6D.pdf",
+      "datos": {
+        "nombre": "ASHLEY GIORDANA IÑIGUEZ OCHOA",
+        "edad": 9,
+        "altura": "120 cm",
+        "sexo": "mujer",
+        "fecha_hechos": "2020-06-20",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: REDONDO, COLOR DE PIEL: TRIGUEÑO, CABELLO: CASTAÑO OSCURO, LABIOS: DELGADOS, PESO: 35 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "F62E5590-14E6-4DB9-8918-BCDA6C8CE894.pdf",
+      "datos": {
+        "nombre": "PERLA CERVANTES CIRIANO",
+        "edad": 13,
+        "altura": "156 cm",
+        "sexo": "MUJER",
+        "fecha_hechos": "2020-11-24",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, OJOS: CAFÉS MEDIANOS, NARIZ: ACHATADA, BOCA: MEDIANA, LABIOS: MEDIANOS, PESO: 55 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "BLUSA, PANTIBLUSA, BLUSON, COLOR: ROSA; PANTALÓN, COLOR: NEGRO"
+      }
+    },
+    {
+      "archivo": "F7DD6FDA-D642-49BC-94FF-01B15FBC46E3.pdf",
+      "datos": {
+        "nombre": "LUIS ALBERTO RAMIREZ DOMINGUEZ",
+        "edad": 46,
+        "altura": "1.68 m",
+        "sexo": "hombre",
+        "fecha_hechos": "03/06/2022",
+        "caracteristicas_fisicas": "COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO CLARO RAPADO CRESPO, OJOS: CAFÉS MEDIANOS, BOCA: PEQUEÑA, LABIOS: DELGADOS",
+        "senas_particulares": "CICATRIZ SIN ESPECIFICAR LADO IZQUIERDO",
+        "prendas_vestir": "BOTAS, COLOR: NEGRO; CHALECO, COLOR: VERDE/GRIS/ECOLOGICO; PANTALÓN, COLOR: VERDE/GRIS/ECOLOGICO"
+      }
+    }
+  ]
+}

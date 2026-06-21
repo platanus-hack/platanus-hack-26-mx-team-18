@@ -1,0 +1,202 @@
+{
+  "mes": "noviembre",
+  "anio": 2022,
+  "total_pdfs_procesados": 15,
+  "results": [
+    {
+      "archivo": "023F1EA6-ACE1-4962-BEBC-91529FB243DA.pdf",
+      "datos": {
+        "nombre": "NESTOR JAVIER VALDEZ LEON",
+        "edad": 34,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "02FBAD76-4FA5-422E-939D-C909A8335CFB.pdf",
+      "datos": {
+        "nombre": "MANUEL DE JESUS CEBREROS NORIEGA",
+        "edad": 60,
+        "altura": "160 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "20/09/2022",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: TRIGUEÑO, CABELLO: NEGRO CORTO ONDULADO, NARIZ: RECTO, BOCA: MEDIANA, LABIOS: GRUESOS",
+        "senas_particulares": "CICATRIZ EN BRAZO LADO DERECHO",
+        "prendas_vestir": "PANTALÓN: AZUL, PLAYERA: AZUL, TENIS: BLANCO"
+      }
+    },
+    {
+      "archivo": "1609F7A4-9259-4D39-83D1-DB9865FAA9DD.pdf",
+      "datos": {
+        "nombre": "LUIS ENRIQUE HIGUERA PEÑA",
+        "edad": 54,
+        "altura": "1.68 m",
+        "sexo": "hombre",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: TRIGUEÑO, CABELLO: ENTRECANO CORTO LISO, OJOS: CAFÉS PEQUEÑOS, NARIZ: NO RECUERDA, BOCA: PEQUEÑA, LABIOS: DELGADOS, ESTATURA: 168cm, PESO: 90kg",
+        "senas_particulares": "LUNARES O MANCHAS EN CARA LADO IZQUIERDO, CICATRIZ EN CARA LADO IZQUIERDO",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "28F96C42-6067-4155-994D-5F225DAC397C.pdf",
+      "datos": {
+        "nombre": "ANICETO ALVARADO HERNANDEZ",
+        "edad": 0,
+        "altura": "160cm",
+        "sexo": "desconocido",
+        "fecha_hechos": "desconocida",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO ONDULADO, OJOS: CAFÉS MEDIANOS, NARIZ: ACHATADA, BOCA: PEQUEÑA, LABIOS: GRUESOS, PESO: 60kg",
+        "senas_particulares": "ARETES/PERFORACIONES LADO DERECHO, TATUAJE LADO DERECHO, LUNARES O MANCHAS LADO IZQUIERDO, CICATRIZ LADO UNICO, CICATRIZ LADO IZQUIERDO",
+        "prendas_vestir": "CAMISA: AZUL, PANTALÓN: NEGRO, ZAPATOS: BEIGE"
+      }
+    },
+    {
+      "archivo": "2CF74E80-A03F-48B6-8251-C1A9B8AA5387.pdf",
+      "datos": {
+        "nombre": "FERNANDO SERGIO GUADARRAMA MARTINEZ",
+        "edad": 53,
+        "altura": "168 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "27/10/2022",
+        "caracteristicas_fisicas": "Complexion: robusta, cara: redondo, color de la piel: moreno, cabello: castaño oscuro corto liso, ojos: cafés pequeños, nariz: achatada, boca: grande, labios: gruesos, peso: 90 kg",
+        "senas_particulares": "Cicatriz en cara lado izquierdo",
+        "prendas_vestir": "No especificado"
+      }
+    },
+    {
+      "archivo": "369C8337-DD0F-4FEF-AB23-3AEA44433DF1.pdf",
+      "datos": {
+        "nombre": "MARIO MENDEZ TRUJILLO",
+        "edad": 30,
+        "altura": "170 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "2023-06-20",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: BLANCO, CABELLO: CASTAÑO OSCURO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: OPERADA, BOCA: MEDIANA, LABIOS: MEDIANOS, PESO: 70 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PANTALÓN: AZUL MARINO, PLAYERA: BLANCO, TENIS: NEGRO"
+      }
+    },
+    {
+      "archivo": "4AB6C3DD-C70F-42F3-925D-CB39485D51F5.pdf",
+      "datos": {
+        "nombre": "OSCAR GUADALUPE RUIZ RODRIGUEZ",
+        "edad": 38,
+        "altura": "165 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: REDONDO, COLOR DE LA PIEL: TRIGUEÑO, CABELLO: NEGRO LARGO LISO, OJOS: CAFÉS GRANDES, NARIZ: RECTA, BOCA: GRANDE, LABIOS: GRUESOS, ESTATURA: 165cm,PESO:70kg",
+        "senas_particulares": "CICATRIZ EN ABDOMEN LADO UNICO",
+        "prendas_vestir": "PLAYERA, SHORTS, ZAPATOS, COLOR: AZUL MARINO"
+      }
+    },
+    {
+      "archivo": "7127BCD3-99D0-49D4-B215-73D41A07E566.pdf",
+      "datos": {
+        "nombre": "PEDRO HUIZAR DELGADO",
+        "edad": 63,
+        "altura": "160 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "15/11/2022",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: RECTANGULAR, COLOR DE LA PIEL: MORENO, CABELLO: ENTRECANOS CORTO ONDULADO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTAS, BOCA: MEDIANA, LABIOS: DELGADOS",
+        "senas_particulares": "OTRO SIN ESPECIFICAR",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "96EAD1C1-80CE-4186-BFD3-55A78FA6BE12.pdf",
+      "datos": {
+        "nombre": "JOSE MANUEL BECERRA OSUNA",
+        "edad": 37,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "A79E5FC9-EAFA-495D-B618-95DDE5CB2FE8.pdf",
+      "datos": {
+        "nombre": "MARIO GERVACIO DURAN PADILLA",
+        "edad": 39,
+        "altura": "1.75 m",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "30/10/2022",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: BLANCO, CABELLO: CASTAÑO OSCURO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTO, BOCA: MEDIANA, LABIOS: MEDIANOS, ESTATURA: 175cm, PESO: 65kg",
+        "senas_particulares": "ARETES/PERFORACIONES, CICATRIZ LADO UNICO",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "AA6DD8A4-1F6C-4D2A-8E75-D9F9524C30A8.pdf",
+      "datos": {
+        "nombre": "ROBERTO ESPINOZA SANCHEZ",
+        "edad": 73,
+        "altura": "170cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "02/05/2017",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: BLANCO, CABELLO: ENTRECANO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: ACHATADA, BOCA: MEDIANA, LABIOS: DELGADOS, PESO: 80kg",
+        "senas_particulares": "TATUAJE LADO DERECHO,TATUAJE LADO IZQUIERDO,TATUAJE",
+        "prendas_vestir": "PRENDA DE VESTIR: CAMISA,COLOR: ROSA; PRENDA DE VESTIR: PANTALÓN,COLOR: AZUL; PRENDA DE VESTIR: ZAPATOS,COLOR: AZUL"
+      }
+    },
+    {
+      "archivo": "D3E30CFF-D8EB-4895-AEFE-0DC8A5BEB3BD.pdf",
+      "datos": {
+        "nombre": "ALLAN HILARIO ARAGON NUÑEZ",
+        "edad": 36,
+        "altura": "SIN DATO",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "05/10/2010",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "E3D94FE9-8FF8-4257-871C-8D9749ACE36A.pdf",
+      "datos": {
+        "nombre": "MIGUEL ANGEL MAGAÑA BUSTAMANTE",
+        "edad": 26,
+        "altura": "SIN DATO",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "CICATRIZ EN MANO LADO IZQUIERDO, LUNARES O MANCHAS EN ABDOMEN",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "E7DD7E67-70A5-4529-8FB8-DCCC2759C508.pdf",
+      "datos": {
+        "nombre": "GUMARO LIZARRAGA CARRILLO",
+        "edad": 50,
+        "altura": "1.70 m",
+        "sexo": "hombre",
+        "fecha_hechos": "30/11/2022",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO ONDULADO, OJOS: CAFÉS PEQUEÑOS, NARIZ: ACHATADA, BOCA: MEDIANA, LABIOS: GRUESOS, ESTATURA: 170cm, PESO: 70kg",
+        "senas_particulares": "CICATRIZ EN HOMBRO LADO UNICO, TATUAJE EN TÓRAX LADO UNICO",
+        "prendas_vestir": "PRENDA DE VESTIR: CAMISA, COLOR: NEGRO/BLANCO; PRENDA DE VESTIR: PANTALÓN, COLOR: AZUL"
+      }
+    },
+    {
+      "archivo": "F18C293F-8479-4021-B434-774AA0048521.pdf",
+      "datos": {
+        "nombre": "LAURA ELENA PARRA",
+        "edad": 51,
+        "altura": "160 cm",
+        "sexo": "mujer",
+        "fecha_hechos": "Desconocida",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO MEDIANO ONDULADO, OJOS: NEGROS MEDIANOS, NARIZ: NO RECUERDA, BOCA: NO RECUERDA, LABIOS: NO RECUERDA",
+        "senas_particulares": "CICATRIZ EN MANO LADO UNICO",
+        "prendas_vestir": "PANTALÓN NEGRO, PLAYERA ROJA, TENIS AZUL"
+      }
+    }
+  ]
+}

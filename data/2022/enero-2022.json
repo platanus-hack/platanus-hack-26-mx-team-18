@@ -1,0 +1,163 @@
+{
+  "mes": "enero",
+  "anio": 2026,
+  "total_pdfs_procesados": 12,
+  "results": [
+    {
+      "archivo": "0830E86E-EA51-42CC-83F3-10159DD08B60.pdf",
+      "datos": {
+        "nombre": "DONALDO ATAHUALPA MARTINEZ VAZQUEZ",
+        "edad": 29,
+        "altura": "1.78 m",
+        "sexo": "hombre",
+        "fecha_hechos": "15/12/2019",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO LISO, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: GRUESOS, ESTATURA: 178cm, PESO: 70kg",
+        "senas_particulares": "OTRO SIN ESPECIFICAR, LUNARES O MANCHAS SIN ESPECIFICAR, TATUAJE SIN ESPECIFICAR",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "1A4AA901-94E3-4E7B-8EFE-993438883BFC.pdf",
+      "datos": {
+        "nombre": "Osbaldo Gutierrez Castro",
+        "edad": 44,
+        "altura": "1.67 m",
+        "sexo": "desconocido",
+        "fecha_hechos": "desconocido",
+        "caracteristicas_fisicas": "Complexión: mediana, cara: redondo, color de la piel: moreno, cabello: negro corto liso, nariz: recta, boca: mediana, labios: gruesos, peso: 87 kg",
+        "senas_particulares": "Tatuaje sin especificar lado derecho, tatuaje sin especificar lado izquierdo",
+        "prendas_vestir": "Sin dato"
+      }
+    },
+    {
+      "archivo": "45BB1C70-9B66-4371-82AD-7428FD00F3C6.pdf",
+      "datos": {
+        "nombre": "Lucio Armando De La Cruz",
+        "edad": 60,
+        "altura": "165 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "06/01/2022",
+        "caracteristicas_fisicas": "Complexión: Delgada, Cara: Ovalado, Color de la piel: Moreno, Cabello: Negro corto ondulado, Ojos: Cafés medianos, Nariz: Recta, Boca: Pequeña, Labios: Delgados, Peso: 65 kg",
+        "senas_particulares": "Ninguna",
+        "prendas_vestir": "Sin dato"
+      }
+    },
+    {
+      "archivo": "4EDBD920-7883-4F03-A508-528E02D070EA.pdf",
+      "datos": {
+        "nombre": "RICARDO PEREZ AGUIRRE",
+        "edad": 55,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "5E10076B-9C98-4913-9B56-C2C04F124B87.pdf",
+      "datos": {
+        "nombre": "FABIAN RUIZ PACHECO",
+        "edad": 46,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "68A8C32E-0A03-4E7D-877E-A8AF3535EA6D.pdf",
+      "datos": {
+        "nombre": "JOSE ELEAZAR RAMIREZ DOMINGUEZ",
+        "edad": 49,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "964E473F-6E8E-4DA8-AC09-BD1C89C1F3C6.pdf",
+      "datos": {
+        "nombre": "LUIS ANGEL RAMOS MORA",
+        "edad": 29,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "9CB607D2-D84A-40D5-90FD-407026410DF3.pdf",
+      "datos": {
+        "nombre": "ALDO IMMER ARADILLAS MAR",
+        "edad": 55,
+        "altura": "SIN DATO",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "24/01/2022",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "B8849A17-007E-437B-8380-B9AD5A76A96F.pdf",
+      "datos": {
+        "nombre": "Gilberto Garcia Leyva",
+        "edad": 27,
+        "altura": "174cm",
+        "sexo": "hombre",
+        "fecha_hechos": "30/01/2022",
+        "caracteristicas_fisicas": "Complexion: mediana, cara: ovalado, color de la piel: moreno, cabello: negro mediano ondulado, ojos: negros grandes, nariz: no recuerda, boca: mediana, labios: medianos",
+        "senas_particulares": "Cicatriz sin especificar",
+        "prendas_vestir": "Camisa color gris, chamara color negro, pantalón color negro, tenis color negro"
+      }
+    },
+    {
+      "archivo": "D954332D-C1D7-4987-BFC7-93B19CDC96A4.pdf",
+      "datos": {
+        "nombre": "JOSE DE JESUS JIMENEZ ARIAS",
+        "edad": 38,
+        "altura": "160 cm",
+        "sexo": "desconocido",
+        "fecha_hechos": "desconocido",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: RECTANGULAR, COLOR DE LA PIEL: MORENO, OJOS: NEGROS MEDIANOS, NARIZ: RECTAS, BOCA: MEDIANA, LABIOS: GRUESOS, PESO: 75 kg",
+        "senas_particulares": "DEFECTO FISICO SIN ESPECIFICAR, ARETES/PERFORACIONES",
+        "prendas_vestir": "PANTALÓN, COLOR: AZUL MARINO; PLAYERA, COLOR: BLANCO; TENIS, COLOR: NEGRO"
+      }
+    },
+    {
+      "archivo": "E778E9DB-A665-4F18-82E7-359E86E57364.pdf",
+      "datos": {
+        "nombre": "FRANCISCO ENRIQUE CABALLERO SANDOVAL",
+        "edad": 29,
+        "altura": "1.73 m",
+        "sexo": "hombre",
+        "fecha_hechos": "30/01/2022",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: PEQUEÑA, LABIOS: DELGADOS, ESTATURA: 173cm, PESO: 65kg",
+        "senas_particulares": "CICATRIZ SIN ESPECIFICAR LADO DERECHO, TATUAJE SIN ESPECIFICAR LADO DERECHO, TATUAJE SIN ESPECIFICAR LADO IZQUIERDO",
+        "prendas_vestir": "CAMISA COLOR: NEGRO, VERDE/GRIS/ECOLOGICO; CHAMARRA COLOR: NEGRO; PANTALÓN COLOR: NEGRO; TENIS COLOR: NEGRO"
+      }
+    },
+    {
+      "archivo": "F4E7A036-D996-458E-A141-595ED638454D.pdf",
+      "datos": {
+        "nombre": "ARIEL FIGUEROA INZUNZA",
+        "edad": 35,
+        "altura": "1.75 m",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "03/01/2022",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: BLANCO, CABELLO: CASTAÑO OSCURO MEDIANO ONDULADO, OJOS: CAFÉS GRANDES, NARIZ: RECTA, BOCA: GRANDE, LABIOS: GRUESOS, PESO: 65 kg",
+        "senas_particulares": "CICATRIZ",
+        "prendas_vestir": "PANTALÓN"
+      }
+    }
+  ]
+}

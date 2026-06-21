@@ -1,0 +1,384 @@
+{
+  "mes": "marzo",
+  "anio": 2023,
+  "total_pdfs_procesados": 29,
+  "results": [
+    {
+      "archivo": "03D85C01-5773-417A-BA35-CB14E54DF188.pdf",
+      "datos": {
+        "nombre": "MIGUEL ANGEL VALENZUELA VERDUGO",
+        "edad": 30,
+        "altura": "164 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "2023-02-26",
+        "caracteristicas_fisicas": "Delgada, cara ovalado, color de la piel moreno, cabello castaño oscuro largo ondulado, ojos cafés medianos, nariz recta, boca grande, labios gruesos.",
+        "senas_particulares": "Tattoo en antebrazo lado derecho, cicatriz sin especificar lado único, tattoo sin especificar lado derecho, tattoo sin especificar lado izquierdo.",
+        "prendas_vestir": "Chamarra, pantalón, color azul"
+      }
+    },
+    {
+      "archivo": "048DE87C-853E-49E9-8D46-AC6EA60C536B.pdf",
+      "datos": {
+        "nombre": "CRISTHIAN EDUARDO PEREZ RENTERIA",
+        "edad": 30,
+        "altura": "170 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "desaparecido",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: GRANDE, LABIOS: GRUESOS, PESO: 70 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PLAYERA COLOR: NEGRO, SHORTS COLOR: GRIS, TENIS COLOR: NEGRO"
+      }
+    },
+    {
+      "archivo": "0C5C5436-0384-46C7-9313-FB4068D5E242.pdf",
+      "datos": {
+        "nombre": "CARLOS ROMERO GARCIA",
+        "edad": 74,
+        "altura": "182 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: ENTRECANO CORTO ONDULADO, OJOS: CAFÉS GRANDES, NARIZ: ACHATADA, BOCA: PEQUEÑA, LABIOS: DELGADOS, PESO: 100 kg",
+        "senas_particulares": "CICATRIZ LADO UNICO",
+        "prendas_vestir": "SHORTS, COLOR: AZUL"
+      }
+    },
+    {
+      "archivo": "10FA18FC-FB7F-4321-A552-C38579C0D311.pdf",
+      "datos": {
+        "nombre": "ABRAHAM LOPEZ MARTINEZ",
+        "edad": 29,
+        "altura": "185 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "13/03/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: GRUESOS, PESO: 80 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "22D898EA-6D3F-44F5-9543-B3EDB6238AC2.pdf",
+      "datos": {
+        "nombre": "OSCAR URIEL SANCHEZ CRUZ",
+        "edad": 22,
+        "altura": "150 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "17/03/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: BLANCO, CABELLO: NEGRO MEDIANO ONDULADO, OJOS: CAFÉS PEQUEÑOS, NARIZ: OPERADA, BOCA: PEQUEÑA, LABIOS: DELGADOS",
+        "senas_particulares": "CICATRIZ, LUNARES O MANCHAS, TATUAJE SIN ESPECIFICAR",
+        "prendas_vestir": "CAMISA: NEGRO, PANTALÓN: AZUL MARINO, TENIS: NEGRO/BLANCO"
+      }
+    },
+    {
+      "archivo": "23D00863-B738-4E10-ADC9-275C5AF2A9CC.pdf",
+      "datos": {
+        "nombre": "SERGIO ANTONIO AYALA AGUIAR",
+        "edad": 29,
+        "altura": "SIN DATO",
+        "sexo": "NO ESPECIFICADO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "43FE40A2-DFB2-4BE0-9750-686BDF93927F.pdf",
+      "datos": {
+        "nombre": "CHRISTIAN DE JESUS CRESPO AYON",
+        "edad": 37,
+        "altura": "176 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "30/03/2023",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: BLANCO, CABELLO: CASTAÑO OSCURO CORTO ONDULADO, OJOS: CAFÉS MEDIANOS, NARIZ: NO RECUERDA, BOCA: PEQUEÑA, LABIOS: MEDIANOS, PESO: 82 kg",
+        "senas_particulares": "CICATRIZ SIN ESPECIFICAR",
+        "prendas_vestir": "PANTALÓN, COLOR: AZUL; PLAYERA, COLOR: GRIS"
+      }
+    },
+    {
+      "archivo": "44AE3066-9EEE-48D2-9D85-766E38962857 (1).pdf",
+      "datos": {
+        "nombre": "Yahir Espinoza Santiago",
+        "edad": 19,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "4B2A50AD-9DE3-4F43-A064-D4AD360F3F7A.pdf",
+      "datos": {
+        "nombre": "Joaquin Zatarain Sanchez",
+        "edad": 38,
+        "altura": "171 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "28/06/2020",
+        "caracteristicas_fisicas": "Complexion: Robusta, Cara: Redondo, Color de la piel: Moreno, Cabello: Negro corto liso, Ojos: Negros grandes, Boca: Pequeña, Labios: Gruesos, Peso: 130 kg",
+        "senas_particulares": "Cicatriz sin especificar, Lunares o manchas sin especificar",
+        "prendas_vestir": "Sin dato"
+      }
+    },
+    {
+      "archivo": "4F4163BB-AE1D-42C3-904C-6F79CD8A89E8.pdf",
+      "datos": {
+        "nombre": "JORGE LUIS GUTIERREZ PEREZ",
+        "edad": 33,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "603366F0-051B-47E6-B183-EB8D8A3132DE.pdf",
+      "datos": {
+        "nombre": "CARLOS IBAN SANDOVAL LEYVA",
+        "edad": 46,
+        "altura": "165 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "20/07/2018",
+        "caracteristicas_fisicas": "COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO ONDULADO, OJOS: CAFÉS MEDIANOS",
+        "senas_particulares": "LUNARES O MANCHAS, CICATRIZ EN ANTEBRAZO LADO DERECHO",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "614265E0-80F5-4FC8-97B5-C4CF017DE349.pdf",
+      "datos": {
+        "nombre": "EDGAR EDIEL VALDEZ RENDON",
+        "edad": 33,
+        "altura": "SIN DATO",
+        "sexo": "N/A",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "64D34F9B-E01E-4C82-AD5B-BA66407DFE9F.pdf",
+      "datos": {
+        "nombre": "JUAN CARLOS SEPULVEDA MEJIA",
+        "edad": 39,
+        "altura": "180cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "24/08",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: REDONDO, COLOR DE LA PIEL: BLANCO, CABELLO: CASTAÑO CLARO CORTO ONDULADO, OJOS: CAFÉS NO RECUERDA, NARIZ: ACHATADA, BOCA: MEDIANA, LABIOS: MEDIANOS, PESO: 80kg",
+        "senas_particulares": "LUNARES O MANCHAS SIN ESPECIFICAR , TATUAJE SIN ESPECIFICAR LADO IZQUIERDO, TATUAJE SIN ESPECIFICAR LADO DERECHO, TATUAJE SIN ESPECIFICAR LADO IZQUIERDO",
+        "prendas_vestir": "CALCETIN, COLOR: NEGRO; PANTALÓN, COLOR: AZUL; PLAYERA, COLOR: NEGRO; ZAPATOS, COLOR: ROJO"
+      }
+    },
+    {
+      "archivo": "6D36BFEC-1D3A-488D-98A6-B0E97E92F333.pdf",
+      "datos": {
+        "nombre": "RUMALDO MARO DOMINGUEZ",
+        "edad": 62,
+        "altura": "",
+        "sexo": "",
+        "fecha_hechos": "",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "7FA548C2-B33E-40B4-A1A1-1109C73E46E9.pdf",
+      "datos": {
+        "nombre": "ANTONIO MENDEZ FERNANDEZ",
+        "edad": 49,
+        "altura": "165 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "27/03/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: BLANCO, CABELLO: NEGRO RAPADO LISO, OJOS: CAFÉS PEQUEÑOS, NARIZ: RECTA, BOCA: PEQUEÑA, LABIOS: DELGADOS, PESO: 65kg",
+        "senas_particulares": "CICATRIZ EN BRAZO LADO DERECHO, TATUAJE EN TÓRAX LADO IZQUIERDO, TATUAJE EN BRAZO LADO IZQUIERDO, CICATRIZ EN PIE LADO IZQUIERDO, TATUAJE EN BRAZO LADO DERECHO",
+        "prendas_vestir": "CHAMARRA, COLOR: VERDE OBSCURO; PANTALÓN, COLOR: BEIGE; PLAYERA, COLOR: VERDE/BLANCO; TENIS, COLOR: BLANCO"
+      }
+    },
+    {
+      "archivo": "80828453-E68F-4823-9822-7ECC8A8A9EE8.pdf",
+      "datos": {
+        "nombre": "RUBEN ERNESTO BATISTA BUSTILLOS",
+        "edad": 50,
+        "altura": "186 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "2023-06-20",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: REDONDO, COLOR DE LA PIEL: BLANCO, CABELLO: CASTAÑO OSCURO CORTO ONDULADO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: GRANDE, LABIOS: GRUESOS, PESO:100kg",
+        "senas_particulares": "LUNARES O MANCHAS LADO UNICO,CICATRIZ LADO IZQUIERDO",
+        "prendas_vestir": "CAMISA COLOR: BLANCO, SHORTS COLOR: GRIS, ZAPATOS COLOR: NEGRO"
+      }
+    },
+    {
+      "archivo": "86A4A65A-2CA5-4814-B4FE-2DF19CF97026.pdf",
+      "datos": {
+        "nombre": "DANIEL ALBERTO GUTIERREZ DONES",
+        "edad": 27,
+        "altura": "198 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "12/12/2022",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: BLANCO, CABELLO: CASTAÑO OSCURO LARGO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: NO RECUERDA, BOCA: MEDIANA, LABIOS: DELGADOS",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "AC233C59-FE55-4D80-B624-39583581699C.pdf",
+      "datos": {
+        "nombre": "ISAAC ANDREY ESTRADA MANJARREZ",
+        "edad": 33,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "B2ED07E5-12F6-49A7-8A63-C6818C5571D9.pdf",
+      "datos": {
+        "nombre": "FRANCISCO JAVIER SALAS RUIZ",
+        "edad": 50,
+        "altura": "168 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "Desconocida",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: MEDIANOS",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "CAMISA: AZUL, PANTALÓN: NEGRO, TENIS: NEGRO"
+      }
+    },
+    {
+      "archivo": "B4282529-4005-4006-A7D4-96C34D222A82.pdf",
+      "datos": {
+        "nombre": "DAVID RIVERA PANFILO",
+        "edad": 35,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "B5CAC01E-64EE-4E55-A678-2E4118B0A127.pdf",
+      "datos": {
+        "nombre": "PEDRO FRANCISCO BELTRAN BRUNN",
+        "edad": 20,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "C17B9C9B-EA27-4370-8796-022EBE48EF42.pdf",
+      "datos": {
+        "nombre": "BRIAN JESUS SANCHEZ ARAGON",
+        "edad": 25,
+        "altura": "188 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "22/02/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO LISO, OJOS: CAFÉS GRANDES, NARIZ: RECTA, BOCA: GRANDE, LABIOS: GRUESOS, PESO: 70 kg",
+        "senas_particulares": "PROTESIS SIN ESPECIFICAR LADO UNICO",
+        "prendas_vestir": "CHAMARRA COLOR: GRIS, PANTALÓN COLOR: NEGRO, TENIS COLOR: GRIS"
+      }
+    },
+    {
+      "archivo": "C6628ED5-ADA1-49D0-AC10-84A521161C39.pdf",
+      "datos": {
+        "nombre": "GERMAN PEÑA PLAZA",
+        "edad": 66,
+        "altura": "182cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "21/03/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: ENTRECANO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: GRUESOS, ESTATURA: 182cm, PESO: 90kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "E28506FD-8FC4-4DD8-883B-C42625E65343.pdf",
+      "datos": {
+        "nombre": "JOSE ALFREDO RUBIO CERVANTES",
+        "edad": 35,
+        "altura": "184 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "18/03/2023",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: REDONDO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO CRESPO, OJOS: CAFÉS PEQUEÑOS, NARIZ: ACHATADA, BOCA: GRANDE, LABIOS: DELGADOS, PESO: 100kg",
+        "senas_particulares": "TATUAJE LADO DERECHO, TATUAJE SIN ESPECIFICAR, LUNARES O MANCHAS SIN ESPECIFICAR LADO UNICO, TATUAJE LADO UNICO",
+        "prendas_vestir": "CAMISA, COLOR: NEGRO; PANTALÓN, COLOR: NEGRO"
+      }
+    },
+    {
+      "archivo": "E2A610E6-2215-46ED-B1D6-A9B35B8136E5.pdf",
+      "datos": {
+        "nombre": "JOSE GUADALUPE ESPAÑA SARABIA",
+        "edad": 33,
+        "altura": "175 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "05/03/2023",
+        "caracteristicas_fisicas": "COMPLEXION:DELGADA,CARA:OVALADO,COLOR DE LA PIEL:MORENO,CABELLO:NEGRO LARGO LISO,OJOS:CAFÉSGRANDES,NARIZ:RECTA,BOCA:MEDIANA,LABIOS:GRUESOS,PESO:70kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "E651991B-F9FC-48CA-BF0C-BECE1B600F70.pdf",
+      "datos": {
+        "nombre": "DIEGO ARMANDO YOC GONZALEZ",
+        "edad": 31,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "E8D78EB1-C0DB-439D-861C-D2F554C9FC6B.pdf",
+      "datos": {
+        "nombre": "MANUEL EDUARDO ROBLES FIERRO",
+        "edad": 20,
+        "altura": "",
+        "sexo": "",
+        "fecha_hechos": "",
+        "caracteristicas_fisicas": "",
+        "senas_particulares": "",
+        "prendas_vestir": ""
+      }
+    },
+    {
+      "archivo": "E9B273C5-5CD8-40B2-A57E-EC049BD06C11.pdf",
+      "datos": {
+        "nombre": "EZEQUIEL ANTONIO REYES ZAMUDIO",
+        "edad": 22,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "FE69D817-9374-452C-B42C-85ADD655B07F.pdf",
+      "datos": {
+        "nombre": "ERNESTO CORONA INZUNZA",
+        "edad": 21,
+        "altura": "170 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "20/02/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO ONDULADO, OJOS: CAFÉS MEDIANOS, BOCA: MEDIANA, LABIOS: GRUESOS, PESO: 60 kg",
+        "senas_particulares": "CICATRIZ SIN ESPECIFICAR, LUNARES O MANCHAS SIN ESPECIFICAR",
+        "prendas_vestir": "CHAMARRA: NEGRO, PANTALÓN: NEGRO, TENIS: BLANCO"
+      }
+    }
+  ]
+}

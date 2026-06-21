@@ -1,0 +1,189 @@
+{
+  "mes": "agosto",
+  "anio": 2026,
+  "total_pdfs_procesados": 14,
+  "results": [
+    {
+      "archivo": "0E8173AD-B269-48F7-9054-555DB757488A.pdf",
+      "datos": {
+        "nombre": "URIEL LOZOYA MONZON",
+        "edad": 28,
+        "altura": "158 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "sin dato",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: TRIGUEÑO, CABELLO: CASTAÑO OSCURO CORTO ONDULADO, OJOS: CAFÉS MEDIANOS, BOCA: MEDIANA, LABIOS: DELGADOS",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "10CB52AC-A621-4120-A478-EC5E714A2039.pdf",
+      "datos": {
+        "nombre": "OSCAR RAFAEL GOMEZ LLAMAS",
+        "edad": 50,
+        "altura": "172cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "09/08/2022",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO LISO, OJOS: CAFES MEDIANOS, NARIZ: RECTA, BOCA: GRANDE, LABIOS: MEDIANOS, PESO: 75kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PRENDA DE VESTIR: PANTALÓN, COLOR: AZUL; PRENDA DE VESTIR: PLAYERA, COLOR: AZUL; PRENDA DE VESTIR: TENIS, COLOR: NEGRO"
+      }
+    },
+    {
+      "archivo": "2E422854-DEFA-45F8-87CE-89673C517897.pdf",
+      "datos": {
+        "nombre": "JOSE GASPAR QUINTERO PEREZ",
+        "edad": 36,
+        "altura": "1.83 m",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "01/08/2022",
+        "caracteristicas_fisicas": "Complexión mediana, cara ovalado, color de la piel trigueño, cabello castaño oscuro corto liso, ojos cafés medianos, nariz recta, boca mediana, labios delgados.",
+        "senas_particulares": "Cicatriz en cara lado derecho, tatuaje en brazo lado derecho, tatuaje en hombro lado único.",
+        "prendas_vestir": "Camisa de color vino."
+      }
+    },
+    {
+      "archivo": "403ED079-996C-4942-9904-8B023716BD09.pdf",
+      "datos": {
+        "nombre": "JORGE FRANCISCO SOBERANEZ SANCHEZ",
+        "edad": 25,
+        "altura": "180cm",
+        "sexo": "hombre",
+        "fecha_hechos": "Fecha de Consulta: 20/6/2026,17:45:34",
+        "caracteristicas_fisicas": "COMPLEXION:ROBUSTA, CARA:OVALADO, COLOR DE LA PIEL:MORENO, CABELLO:CASTAÑO OSCURO NO RECUERDA ONDULADO, OJOS:CAFÉS GRANDES, NARIZ:RECTA, BOCA:MEDIANA, LABIOS:GRUESOS, PESO:91kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "580FDC41-2DC1-4F56-B0A0-814A7084DFF9.pdf",
+      "datos": {
+        "nombre": "ALBERTO HERNANDEZ GARCIA",
+        "edad": 60,
+        "altura": "1.73 m",
+        "sexo": "hombre",
+        "fecha_hechos": "25/07/2022",
+        "caracteristicas_fisicas": "Complección: mediana, cara: ovalado, color de piel: moreno, nariz: recta, boca: gruesa, cabello: negro corto liso, ojos: cafés, peso: 75kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "609C0DDD-941B-4DF0-B332-1D9B6B3B8E8D.pdf",
+      "datos": {
+        "nombre": "ABEL GIOVANNI LUCAS BELTRAN",
+        "edad": 42,
+        "altura": "SIN DATO",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "03/08/2022",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "TATUAJE EN ANTEBRAZO",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "70130B78-1770-4872-A60F-B4CA7A68B13E.pdf",
+      "datos": {
+        "nombre": "ROBERTO CERVANTES ESPARZA",
+        "edad": 26,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "A3A743B0-51E2-4849-A796-84FA058F0186.pdf",
+      "datos": {
+        "nombre": "Javier Antonio Perez Jimenez",
+        "edad": 31,
+        "altura": "1.75 m",
+        "sexo": "hombre",
+        "fecha_hechos": "01/11/2021",
+        "caracteristicas_fisicas": "Delgada, cara ovalado, color de la piel moreno, cabello negro corto liso, ojos cafés medianos, nariz desv. derecha, boca mediana, labios medianos, peso 50kg",
+        "senas_particulares": "Tatuaje en brazo lado derecho, cicatriz lado izquierdo",
+        "prendas_vestir": "No especificado"
+      }
+    },
+    {
+      "archivo": "A521360F-5BF8-446F-A19E-14096D7B5CC3.pdf",
+      "datos": {
+        "nombre": "JUAN JOSE RUIZ QUEVEDO",
+        "edad": 57,
+        "altura": "175 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "05/10/2020",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: TRIGUEÑO, CABELLO: ENTRECANO LARGO LISO, OJOS: CAFÉS MEDIANOS, BOCA: MEDIANA, LABIOS: MEDIANOS, ESTATURA: 175 cm, PESO: 65 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PRENDA DE VESTIR: SHORTS, COLOR: BEIGE"
+      }
+    },
+    {
+      "archivo": "B0F3A0DB-EA28-4E78-96A3-5AE336360974.pdf",
+      "datos": {
+        "nombre": "GUADALUPE PARDO MARISCAL",
+        "edad": 34,
+        "altura": "165 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "20/08/2022",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO ONDULADO, OJOS: CAFÉS PEQUEÑOS, NARIZ: RECTA, BOCA: PEQUEÑA, LABIOS: DELGADOS, ESTATURA: 165cm, PESO: 72kg",
+        "senas_particulares": "TATUAJE SIN ESPECIFICAR LADO UNICO, CICATRIZ SIN ESPECIFICAR LADO UNICO",
+        "prendas_vestir": "CAMISA, PANTALÓN, TENIS"
+      }
+    },
+    {
+      "archivo": "B18FB3E1-9816-4102-9FEF-A4B93FA661E3.pdf",
+      "datos": {
+        "nombre": "HEIBAR JOSUE TAPIA SALAZAR",
+        "edad": 29,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "CF55477E-DDD8-496A-8FED-D17AD4C90A7D.pdf",
+      "datos": {
+        "nombre": "JAIME ANTONIO ISLAS ALVAREZ",
+        "edad": 48,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "NINGUNA",
+        "senas_particulares": "SIN DATO",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "E7966F12-054B-4CB9-813F-B9286D3E4008.pdf",
+      "datos": {
+        "nombre": "JOSE RITO ROCHA VILLA",
+        "edad": 36,
+        "altura": "165 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "06/08/2022",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: TRIGUEÑO, CABELLO: NEGRO CORTO LISO, OJOS: CAFÉS GRANDES, BOCA: MEDIANA, LABIOS: MEDIANOS",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "FAA67E64-D2BC-4864-96C4-3417E49B87FF.pdf",
+      "datos": {
+        "nombre": "JAIME TORRES ROQUE",
+        "edad": 42,
+        "altura": "SIN DATO",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "07/07/2022",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    }
+  ]
+}

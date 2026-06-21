@@ -1,0 +1,228 @@
+{
+  "mes": "septiembre",
+  "anio": 2022,
+  "total_pdfs_procesados": 17,
+  "results": [
+    {
+      "archivo": "02FBAD76-4FA5-422E-939D-C909A8335CFB.pdf",
+      "datos": {
+        "nombre": "MANUEL DE JESUS CEBREROS NORIEGA",
+        "edad": 60,
+        "altura": "160 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "20/09/2022",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: TRIGUEÑO, CABELLO: NEGRO CORTO ONDULADO, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: GRUESOS",
+        "senas_particulares": "CICATRIZ EN BRAZO LADO DERECHO",
+        "prendas_vestir": "PANTALÓN: AZUL, PLAYERA: AZUL, TENIS: BLANCO"
+      }
+    },
+    {
+      "archivo": "0E8173AD-B269-48F7-9054-555DB757488A.pdf",
+      "datos": {
+        "nombre": "URIEL LOZOYA MONZON",
+        "edad": 28,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "N/A",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COORDINADOR, OJOS: CAFÉS MEDIANOS",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO, LOCAL DE BUSQUEDA DE PERSONAS DEL ESTADO DE SINALOA. !1 reportes registrados! NO LOCALIZADO!! Monzón, Estado de Sinaloa, México (Fecha de Consulta: 20/6/2026, 18:01:52.) Autoridades Competentes: COMISION ."
+      }
+    },
+    {
+      "archivo": "2767947F-2FFA-43BC-A212-38BAC4307DD6.pdf",
+      "datos": {
+        "nombre": "JUAN ERNESTO VILLA SANTOS",
+        "edad": 36,
+        "altura": "168 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "2023-10-20",
+        "caracteristicas_fisicas": "Delgada, cara ovalada, color de piel: moreno, cabello: castaño oscuro corto liso, ojos: cafés medianos, nariz: recta, boca: mediana, labios: medianos",
+        "senas_particulares": "",
+        "prendas_vestir": "Playera gris y shorts azul cielo"
+      }
+    },
+    {
+      "archivo": "291D580B-CDE5-4D74-9A0D-5FA4AB97EC22.pdf",
+      "datos": {
+        "nombre": "JORGE MIGUEL ROMO TORRES",
+        "edad": 24,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "313D4465-3304-42CA-A4CC-A3C132CE3D23.pdf",
+      "datos": {
+        "nombre": "HELEODORO MORALES CONTRERAS",
+        "edad": 32,
+        "altura": "180 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "30/03/2012",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: REDONDO, COLOR DE LA PIEL: MORENO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: PEQUEÑA, LABIOS: GRUESOS, PESO: 75kg",
+        "senas_particulares": "LUNARES O MANCHAS SIN ESPECIFICAR LADO UNICO",
+        "prendas_vestir": "CAMISA, COLOR: AZUL; PANTALÓN, COLOR: AZUL; TENIS, COLOR: BLANCO"
+      }
+    },
+    {
+      "archivo": "33060D02-0460-492C-B989-AAC37EE52589.pdf",
+      "datos": {
+        "nombre": "JAVIER KARIN DIMAS VARGAS",
+        "edad": 26,
+        "altura": "165 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "16/09/2022",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO ONDULADO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: GRANDE, LABIOS: GRUESOS, PESO: 70 kg",
+        "senas_particulares": "CICATRIZ LADO ÚNICO",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "369C8337-DD0F-4FEF-AB23-3AEA44433DF1.pdf",
+      "datos": {
+        "nombre": "MARIO MENDEZ TRUJILLO",
+        "edad": 30,
+        "altura": "170cm",
+        "sexo": "hombre",
+        "fecha_hechos": "2023-10-20",
+        "caracteristicas_fisicas": "COMPLEXION:DELGADA,CARA:OVALADO,COLOR DE LA PIEL:BLANCO,CABELLO:CASTAÑO OSCURO CORTO LISO,OJOS:CAFÉS MEDIANOS,NARIZ:OPERADA,BOCA:MEDIANA,LABIOS:MEDIANOS,PESO:70kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PANTALÓN COLOR:AZUL MARINO, PLAYERA COLOR:BLANCO, TENIS COLOR:NEGRO"
+      }
+    },
+    {
+      "archivo": "43C195DD-B1BE-4ED0-A201-F4BACE83F29D.pdf",
+      "datos": {
+        "nombre": "GONZALO AGUILAR GARCIA",
+        "edad": 67,
+        "altura": "170cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "23/09/2022",
+        "caracteristicas_fisicas": "COMPLEXION:ROBUSTA,CARA:OVALADO,COLOR DE LA PIEL:MORENO,CABELLO:CANO CORTO LISO,OJOS:CAFÉS GRANDES,NARIZ:ACHATADA,BOCA:GRANDE,LABIOS:GRUESOS,PESO:100kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "4CC11861-F69B-4C07-9A09-C777F694323E.pdf",
+      "datos": {
+        "nombre": "GEMA JUDITH LEON COTA",
+        "edad": 20,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "50139406-C633-42F6-ACD2-651515400BA9.pdf",
+      "datos": {
+        "nombre": "MARIO PANTOJA AVALOS",
+        "edad": 41,
+        "altura": "1.75 m",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: OVALADO, COLOR DE LA PIEL: BLANCO, CABELLO: NEGRO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: GRUESOS, ESTATURA: 175cm, PESO: 80kg",
+        "senas_particulares": "TATUAJE EN ANTEBRAZO LADO DERECHO, CICATRIZ EN CARA LADO DERECHO, TATUAJE EN BRAZO LADO DERECHO",
+        "prendas_vestir": "PANTALÓN, PLAYERA, TENIS"
+      }
+    },
+    {
+      "archivo": "8356EBA3-B21C-4703-8F50-B98CF21C8F97.pdf",
+      "datos": {
+        "nombre": "Guadalupe Quintero Corona",
+        "edad": 65,
+        "altura": "150 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "19/02/2020",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: ENTRECANO LARGO ONDULADO, OJOS: CAFÉS GRANDES, NARIZ: ACHATADA, BOCA: GRANDE, LABIOS: GRUESOS, PESO: 50 kg",
+        "senas_particulares": "TATUAJE SIN ESPECIFICAR LADO UNICO",
+        "prendas_vestir": "CAMISA, COLOR: NEGRO; PANTALÓN; TENIS, COLOR: ROJO"
+      }
+    },
+    {
+      "archivo": "9D9CF2C2-327B-4336-B682-4E159711C092.pdf",
+      "datos": {
+        "nombre": "JOSE LUIS AVILA ESTRADA",
+        "edad": 52,
+        "altura": "180 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "12/12/2017",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: BLANCO, CABELLO: CASTAÑO CLARO CORTO ONDULADO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: MEDIANOS, PESO: 80kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "B0F3A0DB-EA28-4E78-96A3-5AE336360974.pdf",
+      "datos": {
+        "nombre": "GUADALUPE PARDO MARISCAL",
+        "edad": 30,
+        "altura": "165 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "20/08/2022",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO ONDULADO, OJOS: CAFÉS PEQUEÑOS, NARIZ: RECTA, BOCA: PEQUEÑA, LABIOS: DELGADOS, PESO: 72 kg",
+        "senas_particulares": "TATUAJE SIN ESPECIFICAR LADO UNICO, CICATRIZ SIN ESPECIFICAR LADO UNICO",
+        "prendas_vestir": "CAMISA, PANTALÓN, TENIS"
+      }
+    },
+    {
+      "archivo": "BA21D706-661C-40CE-8D8B-3180AE49FE96.pdf",
+      "datos": {
+        "nombre": "JOSE LUIZ AGUILAR RODRIGUEZ",
+        "edad": 59,
+        "altura": "80cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "18/09/2016",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: BLANCO, CABELLO: ENTRECANO CORTO LISO, OJOS: CAFÉS PEQUEÑOS, BOCA: MEDIANA, LABIOS: DELGADOS, PESO: 164kg",
+        "senas_particulares": "LUNARES O MANCHAS EN ABDOMEN, DEFECTO FISICO EN MANO LADO DERECHO, CICATRIZ EN ABDOMEN LADO UNICO, CICATRIZ EN HOMBRO",
+        "prendas_vestir": "PANTALÓN, COLOR: NEGRO, PLAYERA, COLOR: NEGRO, ZAPATOS"
+      }
+    },
+    {
+      "archivo": "BC1D6469-DE1B-4C60-AADE-FD67BC71CF6F.pdf",
+      "datos": {
+        "nombre": "DAVID ALONSO QUIÑONES QUIÑONES",
+        "edad": 36,
+        "altura": "170cm",
+        "sexo": "hombre",
+        "fecha_hechos": "27/09/2022",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO RAPADO LISO, OJOS: CAFÉS PEQUEÑOS, NARIZ: RECTA, BOCA: GRANDE, LABIOS: GRUESOS, PESO: 72kg",
+        "senas_particulares": "LUNARES O MANCHAS EN ABDOMEN LADO IZQUIERDO",
+        "prendas_vestir": "CAMISA, COLOR: BLANCO; PANTALÓN, COLOR: AZUL/VERDE; ZAPATOS, COLOR: NEGRO"
+      }
+    },
+    {
+      "archivo": "F111A6C0-8780-499F-91E7-E0E00F039F78.pdf",
+      "datos": {
+        "nombre": "BEATRIZ ADRIANA SALVADOR LUCAS",
+        "edad": 23,
+        "altura": "",
+        "sexo": "MUJER",
+        "fecha_hechos": "10/12/2021",
+        "caracteristicas_fisicas": "",
+        "senas_particulares": "",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "F559A243-300F-4936-ADE3-D7231F6B986B.pdf",
+      "datos": {
+        "nombre": "LUIS ALBERTO BENITEZ DOMINGUEZ",
+        "edad": 37,
+        "altura": "156 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "No especificada",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO ONDULADO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: MEDIANOS, PESO: 65 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PANTALÓN BEIGE, PLAYERA BLANCA"
+      }
+    }
+  ]
+}

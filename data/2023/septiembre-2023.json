@@ -1,0 +1,254 @@
+{
+  "mes": "septiembre",
+  "anio": 2023,
+  "total_pdfs_procesados": 19,
+  "results": [
+    {
+      "archivo": "04E53EC4-CEAC-492B-9944-18ABFFB2E35C.pdf",
+      "datos": {
+        "nombre": "KEEL MANUEL LERMA VERDE",
+        "edad": 37,
+        "altura": "1.80 m",
+        "sexo": "hombre",
+        "fecha_hechos": "09/09/2023",
+        "caracteristicas_fisicas": "COMPLEXIÓN: ROBUSTA, CARA: REDONDO, COLOR DE LA PIEL: BLANCO, CABELLO: CASTAÑO CLARO CORTO ONDULADO, OJOS: VERDES GRANDES, NARIZ: RECTA, BOCA: GRANDE, LABIOS: GRUESOS, PESO: 80 kg",
+        "senas_particulares": "CICATRIZ SIN ESPECIFICAR LADO DERECHO, LUNARES O MANCHAS SIN ESPECIFICAR LADO DERECHO",
+        "prendas_vestir": "SHORTS, COLOR: NEGRO; ZAPATOS, COLOR: VERDE"
+      }
+    },
+    {
+      "archivo": "2731DABB-A16B-407B-A742-1AB151108ECF.pdf",
+      "datos": {
+        "nombre": "JUAN PABLO YANEZ GAXIOLA",
+        "edad": 32,
+        "altura": "1.75 m",
+        "sexo": "hombre",
+        "fecha_hechos": "23/09/2023",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, OJOS: CAFÉS PEQUEÑOS, OLOR DE LA PIEL: TRIGUEÑO, CABELLO: CASTAÑO OSCURO CORTO, BOCA: MEDIANA, LABIOS: DELGADOS, PESO: 95 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "3B3C87CC-5423-474C-8C94-91454DD8346F.pdf",
+      "datos": {
+        "nombre": "JONATHAN ULISES MUÑOZ GARCIA",
+        "edad": 28,
+        "altura": "1.60 m",
+        "sexo": "hombre",
+        "fecha_hechos": "24/09/2023",
+        "caracteristicas_fisicas": "Complexión mediana, cara redonda, color de piel blanco, cabello negro corto crespo, ojos cafés pequeños, nariz: no recuerda, boca mediana, labios medianos.",
+        "senas_particulares": "Tatuaje sin especificar, lunares o manchas sin especificar lado único.",
+        "prendas_vestir": "Playera blanca, shorts verde oscuro, tenis negros."
+      }
+    },
+    {
+      "archivo": "44AE3066-9EEE-48D2-9D85-766E38962857.pdf",
+      "datos": {
+        "nombre": "Yahir Espinoza Santiago",
+        "edad": 19,
+        "altura": "",
+        "sexo": "",
+        "fecha_hechos": "",
+        "caracteristicas_fisicas": "",
+        "senas_particulares": "",
+        "prendas_vestir": ""
+      }
+    },
+    {
+      "archivo": "4CAA9923-498D-465F-B28F-65D155AF145E.pdf",
+      "datos": {
+        "nombre": "EDUARDO GARZON DIAZ",
+        "edad": 24,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "504ACFE7-5C47-4692-BAB0-EC2F61B6C276.pdf",
+      "datos": {
+        "nombre": "CHRISTIAN GEOVANI REYES VERDIN",
+        "edad": 23,
+        "altura": "180cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "30/09/2023",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: GRANDE, LABIOS: GRUESOS, PESO: 70kg",
+        "senas_particulares": "LUNARES O MANCHAS, TATUAJE SIN ESPECIFICAR",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "507250D4-8CB3-42C7-B01C-BFEDAA94EB9E.pdf",
+      "datos": {
+        "nombre": "SAUL YAEL BUSTOS BERUMEN",
+        "edad": 24,
+        "altura": "SIN DATO",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "14/09/2023",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "507BDF6D-8BDD-4FD5-95A0-02FCF39094B8.pdf",
+      "datos": {
+        "nombre": "DIEGO RODRIGUEZ MONTOYA",
+        "edad": 20,
+        "altura": "1.60 m",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "23/09/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: BLANCO, CABELLO: NEGRO LARGO ONDULADO, OJOS: NEGROS MEDIANOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: DELGADOS",
+        "senas_particulares": "TATUAJE SIN ESPECIFICAR LADO DERECHO, LUNARES O MANCHAS SIN ESPECIFICAR LADO DERECHO",
+        "prendas_vestir": "PANTALÓN: AZUL, PLAYERA: NEGRO, ZAPATOS: SIN ESPECIFICAR"
+      }
+    },
+    {
+      "archivo": "8592B00E-5735-4BB8-869F-22C3B0F8BE5B.pdf",
+      "datos": {
+        "nombre": "RAUL LOAIZA TIRADO",
+        "edad": 2,
+        "altura": "165cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "20/09/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CANO MEDIANO ONDULADO, OJOS: CAFÉS PEQUEÑOS, NARIZ: NO RECUERDA, BOCA: MEDIANA, LABIOS: DELGADOS",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "TENIS, COLOR: NEGRO"
+      }
+    },
+    {
+      "archivo": "8E015C66-B2A0-4B1E-A1E3-9C46F97ECEA6.pdf",
+      "datos": {
+        "nombre": "ROBERTO CUENCA HERNANDEZ",
+        "edad": 40,
+        "altura": "167 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "25/09/2023",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: ACHATADA, BOCA: MEDIANA, LABIOS: MEDIANOS, PESO: 80 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "92A5B6A1-4B36-4D95-AFA3-23A847FA0F15.pdf",
+      "datos": {
+        "nombre": "JUAN JOSE VILLANUEVA CORTES",
+        "edad": 22,
+        "altura": "168 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "20/07/2013",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, COLOR DE LA PIEL: MORADO, ENO, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: DELGADOS, PESO: 90 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "932F7AC9-C4DA-4771-8148-C43D939D5A9C.pdf",
+      "datos": {
+        "nombre": "JESUS GIOVANY ESPINOZA RODRIGUEZ",
+        "edad": 23,
+        "altura": "180 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "13/09/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: REDONDO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO ONDULADO, OJOS: CAFÉS MEDIANOS, NARIZ: ALOMADA, BOCA: MEDIANA, LABIOS: GRUESOS, ESTATURA: 180 cm, PESO: 75 kg",
+        "senas_particulares": "CICATRIZ SIN ESPECIFICAR LADO DERECHO",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "CC0E6056-F70E-4049-9CC2-A99D20DB15AA.pdf",
+      "datos": {
+        "nombre": "EDUARDO EMMANUEL RUEDA NAZERAU",
+        "edad": 33,
+        "altura": "172 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "12/09/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO LISO, OJOS: CAFÉS PEQUEÑOS, BOCA: MEDIANA, LABIOS: MEDIANOS",
+        "senas_particulares": "LUNARES O MANCHAS EN NARIZ LADO UNICO, TATUAJE EN BRAZO LADO DERECHO",
+        "prendas_vestir": "CAMISETA COLOR: GRIS, PANTALÓN COLOR: AZUL"
+      }
+    },
+    {
+      "archivo": "CECFFF9E-DCC7-4DEE-8BDA-DB5243EBCA4A.pdf",
+      "datos": {
+        "nombre": "Isidro Vazquez Espinoza",
+        "edad": 45,
+        "altura": "1.75 m",
+        "sexo": "hombre",
+        "fecha_hechos": "28/08/2023",
+        "caracteristicas_fisicas": "Complexión: delgada, cara: ovalado, color de piel: trigueño, cabello: negro corto liso, ojos: cafés, labios: medianos, peso: 75 kg",
+        "senas_particulares": "Tatuaje sin especificar lado derecho",
+        "prendas_vestir": "Sin dato"
+      }
+    },
+    {
+      "archivo": "DB2528C1-ACB4-42EB-A7BC-552397A323C6.pdf",
+      "datos": {
+        "nombre": "EDUARDO GARZON HERNANDEZ",
+        "edad": 47,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "DFFA0343-628F-4F49-8C8B-48C22A4BC589.pdf",
+      "datos": {
+        "nombre": "Sinbad Rios Beltran",
+        "edad": 0,
+        "altura": "170cm",
+        "sexo": "desconocido",
+        "fecha_hechos": "",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: BLANCO, CABELLO: CASTAÑO OSCURO CORTO ONDULADO, OJOS: CAFÉS PEQUEÑOS, NARIZ: ACHATADA, BOCA: MEDIANA, LABIOS: DELGADOS",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PANTALÓN, COLOR: NEGRO; ZAPATOS, COLOR: CAFÉ"
+      }
+    },
+    {
+      "archivo": "E69B6746-1187-46C1-AEEE-91A504896A59.pdf",
+      "datos": {
+        "nombre": "OSCAR HUMBERTO HERNANDEZ QUINTERO",
+        "edad": 31,
+        "altura": "/",
+        "sexo": "/",
+        "fecha_hechos": "/",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "E7DD7E67-70A5-4529-8FB8-DCCC2759C508.pdf",
+      "datos": {
+        "nombre": "GUMARO LIZARRAGA CARRILLO",
+        "edad": 50,
+        "altura": "170 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "30/11/2022",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO ONDULADO, OJOS: CAFÉS PEQUEÑOS, NARIZ: ACHATADA, BOCA: MEDIANA, LABIOS: GRUESOS, PESO: 70 kg",
+        "senas_particulares": "CICATRIZ EN HOMBRO LADO UNICO, TATUAJE EN TÓRAX LADO UNICO",
+        "prendas_vestir": "PRENDA DE VESTIR: CAMISA, COLOR: NEGRO/BLANCO; PRENDA DE VESTIR: PANTALÓN, COLOR: AZUL"
+      }
+    },
+    {
+      "archivo": "F403E9D0-C38A-4D5E-B24E-49EE153F629C.pdf",
+      "datos": {
+        "nombre": "CLEOFAS ZAMORA SAINZ",
+        "edad": 0,
+        "altura": "163 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "20/08/2023",
+        "caracteristicas_fisicas": "COMPLEXION:DELGADA, CARA:OVALADO, COLOR DE LA PIEL:MORENO, CABELLO:CANO MEDIANO LISO, OJOS:CAFÉS PEQUEÑOS, NARIZ:RECTA, BOCA:MEDIANA, LABIOS:DELGADOS, PESO:55kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    }
+  ]
+}

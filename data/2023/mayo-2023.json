@@ -1,0 +1,189 @@
+{
+  "mes": "mayo",
+  "anio": 2023,
+  "total_pdfs_procesados": 14,
+  "results": [
+    {
+      "archivo": "20A5B5B5-D552-450B-8871-B216CE2F124C.pdf",
+      "datos": {
+        "nombre": "SANTOS HERNANDEZ DE LA CRUZ",
+        "edad": 20,
+        "altura": "160cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "25/04/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: TRIGUEÑO, CABELLO: NEGRO CORTO LISO, OJOS: CAFÉS PEQUEÑOS, NARIZ: NO RECUERDA, BOCA: GRANDE, LABIOS: GRUESOS, PESO: 55kg",
+        "senas_particulares": "CICATRIZ EN BARBILLA LADO UNICO",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "229931D5-DD5B-4FC9-B3A0-1B64F1A91A1F.pdf",
+      "datos": {
+        "nombre": "JOSE OSUNA HEREDIA",
+        "edad": 70,
+        "altura": "SIN DATO",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "05/05/2023",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "299E0F79-54BE-422B-9574-582C3CCA9AD0.pdf",
+      "datos": {
+        "nombre": "LUIS MIGUEL NIETO MENDIETA",
+        "edad": 24,
+        "altura": "170 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "01/05/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: TRIGUEÑO, CABELLO: CASTAÑO OSCURO CORTO ONDULADO, OJOS: CAFÉS PEQUEÑOS, NARIZ: RECTA, BOCA: GRANDE, LABIOS: GRUESOS",
+        "senas_particulares": "ARETES/PERFORACIONES EN OREJA, LUNARES O MANCHAS EN BARBILLA LADO DERECHO",
+        "prendas_vestir": "PANTALÓN: NEGRO, PLAYERA: BLANCO, TENIS: GRIS"
+      }
+    },
+    {
+      "archivo": "2F67545B-7D18-4E77-88AC-027074D921FB.pdf",
+      "datos": {
+        "nombre": "Cesar Porfirio Bertoldi Paez",
+        "edad": 50,
+        "altura": "1.65 m",
+        "sexo": "hombre",
+        "fecha_hechos": "2023-05-23",
+        "caracteristicas_fisicas": "Complexión: mediana, cara: redondo, color de la piel: moreno, cabello: castaño oscuro mediano ondulado, ojos: cafés medianos, nariz: achatada, boca: mediana, labios: gruesos",
+        "senas_particulares": "Ninguna",
+        "prendas_vestir": "Botas, color: beige; Pantalón, color: beige; Playera, color: mamey"
+      }
+    },
+    {
+      "archivo": "437A94D3-3163-48A4-A43E-39224C21EB6F.pdf",
+      "datos": {
+        "nombre": "FERNANDO OLIVAS MORALES",
+        "edad": 39,
+        "altura": "160 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "23/05/2023",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO ONDULADO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTAS, BOCA: MEDIANA, LABIOS: DELGADOS, PESO: 90 kg",
+        "senas_particulares": "TATUAJE LADO UNICO",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "442FA5EE-47EC-40A1-B350-CC55E43B4254.pdf",
+      "datos": {
+        "nombre": "OFELIA CORTEZ QUINTERO",
+        "edad": 54,
+        "altura": "1.65 m",
+        "sexo": "mujer",
+        "fecha_hechos": "01/08/2020",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO CLARO CORTO CRESPO, OJOS: CAFÉS PEQUEÑOS, NARIZ: RECTA, BOCA: PEQUEÑA, LABIOS: DELGADOS, ESTATURA: 165cm, PESO: 60kg",
+        "senas_particulares": "CICATRIZ SIN ESPECIFICAR LADO DERECHO",
+        "prendas_vestir": "BLUSA, PANTIBLUSA, BLUSON, PANTALÓN, COLOR: AZUL"
+      }
+    },
+    {
+      "archivo": "4D8A7045-DC21-4998-A2EC-F916F8BD2CE6.pdf",
+      "datos": {
+        "nombre": "MARCO ANTONIO CORRALES URIAS",
+        "edad": 30,
+        "altura": "190 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "04/05/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: PEQUEÑA, LABIOS: DELGADOS, PESO: 70 kg",
+        "senas_particulares": "CICATRIZ SIN ESPECIFICAR, LUNARES O MANCHAS SIN ESPECIFICAR",
+        "prendas_vestir": "PANTALÓN AZUL, PLAYERA NEGRA"
+      }
+    },
+    {
+      "archivo": "55475BA7-612F-4F15-A7BD-75746AE33914.pdf",
+      "datos": {
+        "nombre": "RAFAEL DE JESUS ALVARADO FLORES",
+        "edad": 40,
+        "altura": "170cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "SIN DATOS",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: REDONDO, COLOR DE LA PIEL: BLANCO, CABELLO: CASTAÑO OSCURO CORTO LISO, OJOS: VERDES PEQUEÑOS, NARIZ: ACHATADA, BOCA: MEDIANA, LABIOS: MEDIANOS, PESO: 90kg",
+        "senas_particulares": "CICATRIZ SIN ESPECIFICAR, TATUAJE SIN ESPECIFICAR",
+        "prendas_vestir": "BOTAS, COLOR: NEGRO; PANTALÓN, COLOR: NEGRO; PLAYERA, COLOR: NEGRO"
+      }
+    },
+    {
+      "archivo": "7F0E2A0A-3AB7-49DB-87FB-E0B838E21381.pdf",
+      "datos": {
+        "nombre": "JOSE LUIS CAMACHO DE HARO",
+        "edad": 40,
+        "altura": "170 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "Fecha no especificada",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO ONDULADO, OJOS: CAFÉS PEQUEÑOS, NARIZ: NO RECUERDA, BOCA: GRANDE, LABIOS: GRUESOS, PESO: 65 kg",
+        "senas_particulares": "ARETES/PERFORACIONES SIN ESPECIFICAR, TATUAJE SIN ESPECIFICAR, CICATRIZ SIN ESPECIFICAR",
+        "prendas_vestir": "BOTAS, COLOR: NEGRO; PANTALÓN, COLOR: AZUL MARINO; PLAYERA, COLOR: AZUL MARINO"
+      }
+    },
+    {
+      "archivo": "80828453-E68F-4823-9822-7ECC8A8A9EE8.pdf",
+      "datos": {
+        "nombre": "RUBEN ERNESTO BATISTA BUSTILLOS",
+        "edad": 50,
+        "altura": "186 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "",
+        "caracteristicas_fisicas": "COMPLEXION:ROBUSTA,CARA:REDONDO,COLOR DE LA PIEL:BLANCO,CABELLO:CASTAÑO OSCURO CORTO ONDULADO,OJOS:CAFÉS MEDIANOS,NARIZ:RECTA,BOCA:GRANDE,LABIOS:GRUESOS,PESO:100kg",
+        "senas_particulares": "LUNARES O MANCHAS LADO UNICO,CICATRIZ LADO IZQUIERDO",
+        "prendas_vestir": "CAMISA, COLOR:BLANCO; SHORTS, COLOR:GRIS; ZAPATOS, COLOR:NEGRO"
+      }
+    },
+    {
+      "archivo": "8252656A-A57B-460F-9EB0-FC329D23F5FE.pdf",
+      "datos": {
+        "nombre": "CESAR JESUS QUINTERO CORONEL",
+        "edad": 24,
+        "altura": "1.62 m",
+        "sexo": "hombre",
+        "fecha_hechos": "14/12/2022",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: BLANCO, CABELLO: CASTAÑO OSCURO CORTO LISO, OJOS: CAFÉS GRANDES, NARIZ: RECTO, BOCA: PEQUEÑA, LABIOS: DELGADOS, ESTATURA: 162cm, PESO: 60kg",
+        "senas_particulares": "CICATRIZ SIN ESPECIFICAR, LUNARES O MANCHAS SIN ESPECIFICAR, CICATRIZ SIN ESPECIFICAR LADO IZQUIERDO, TATUAJE SIN ESPECIFICAR LADO DERECHO, LUNARES O MANCHAS SIN ESPECIFICAR LADO DERECHO",
+        "prendas_vestir": "PANTS, COLOR: AZUL MARINO; PLAYERA, COLOR: BLANCO; TENIS, COLOR: BLANCO"
+      }
+    },
+    {
+      "archivo": "BEC67A17-DC32-4B1F-9688-7B90330807C8.pdf",
+      "datos": {
+        "nombre": "CARLOS EDUARDO ARENAS MORALES",
+        "edad": 38,
+        "altura": "170 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "02/10/2019",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO CRESPO, OJOS: CAFÉS MEDIANOS, NARIZ: NO RECUERDA, BOCA: MEDIANA, LABIOS: GRUESOS, PESO: 85 kg",
+        "senas_particulares": "CICATRIZ SIN ESPECIFICAR LADO UNICO",
+        "prendas_vestir": "CAMISA COLOR: VINO, PANTALÓN COLOR: CAFÉ"
+      }
+    },
+    {
+      "archivo": "D0FE8989-2E39-4A6B-BC19-CF8689700FFC.pdf",
+      "datos": {
+        "nombre": "NORMA ALICIA LOPEZ SANCHEZ",
+        "edad": 63,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "D69EF8A0-8C33-4171-898D-57123D5B8C2F.pdf",
+      "datos": {
+        "nombre": "AUDOR SAÑUDO CARVAJAL",
+        "edad": 42,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    }
+  ]
+}

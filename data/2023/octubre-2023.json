@@ -1,0 +1,228 @@
+{
+  "mes": "octubre",
+  "anio": 2023,
+  "total_pdfs_procesados": 17,
+  "results": [
+    {
+      "archivo": "17972C1D-91CD-4CDB-8005-9441F8F0AA09.pdf",
+      "datos": {
+        "nombre": "RAUL ROGELIO COSS LUNA",
+        "edad": 55,
+        "altura": "1.75 m",
+        "sexo": "hombre",
+        "fecha_hechos": "14/07/2023",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO LISO, NARIZ: ALOMADA, BOCA: GRANULAR, LABIOS: GRUESOS, PESO: 90kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "1A374099-E723-4DDD-8349-889C958E10FA.pdf",
+      "datos": {
+        "nombre": "AXELT JARHET CARRERA PACHECO",
+        "edad": 22,
+        "altura": "175cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "17/10/2023",
+        "caracteristicas_fisicas": "COMPLEXION:DELGADA,CARA:OVALADO,COLOR DE LA PIEL:BLANCO,CABELLO:NEGRO MEDIANO LISO,OJOS:CAFÉS MEDIANOS,NARIZ:RECTA,BOCA:MEDIANA,LABIOS:GRUESOS,PESO:65kg",
+        "senas_particulares": "TATUAJE LADO DERECHO,CICATRIZ LADO DERECHO,TATUAJE LADO IZQUIERDO,CICATRIZ LADO IZQUIERDO,TATUAJE",
+        "prendas_vestir": "PLAYERA:NEGRO,SHORTS:VERDE/BLANCO,ZAPATOS:BLANCO"
+      }
+    },
+    {
+      "archivo": "1F2B416C-AB98-4B85-9A99-C8E63AA68D6C.pdf",
+      "datos": {
+        "nombre": "RAMON LOPEZ ZAMORA",
+        "edad": 42,
+        "altura": "165cm",
+        "sexo": "hombre",
+        "fecha_hechos": "2024-06-20",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVOLADO, COLOR DE LA PIEL: BLANCO, CABELLO: ENTRENO CORTO LISO, OJOS: CAFÉS MEDIANOS, BOCA: PEQUEÑA, LABIOS: GRUESOS, PESO: 70kg",
+        "senas_particulares": "TATUAJE EN PIERNA LADO IZQUIERDO, TATUAJE EN ANTEBRAZO LADO UNICO, OTRO EN HOMBRO LADO UNICO, CICATRIZ EN PIERNA LADO DERECHO, CICATRIZ EN CABEZA LADO UNICO, TATUAJE EN HOMBRO LADO UNICO, CICATRIZEN ABDOMEN LADO UNICO",
+        "prendas_vestir": "PANTALÓN COLOR: AZUL CIELO, PLAYERA COLOR: VINO, ZAPATOS COLOR: AZUL MARINO"
+      }
+    },
+    {
+      "archivo": "4434FCB7-4B22-40DC-947A-9011B74AABD3.pdf",
+      "datos": {
+        "nombre": "CHRISTIAN FERNANDO SILVAS BRINGAS",
+        "edad": 37,
+        "altura": "170 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "16/10/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO CORTO LISO, OJOS: NEGROS GRANDES, NARIZ: RECTAS, BOCA: GRANDE, LABIOS: MEDIANOS",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PANTALÓN COLOR: AZUL CIELO, PLAYERA COLOR: AZUL, ROPA INTERIOR COLOR: NEGRO, ZAPATOS COLOR: NEGRO"
+      }
+    },
+    {
+      "archivo": "49BCC5C1-90DB-4991-88B2-8847D4184C65.pdf",
+      "datos": {
+        "nombre": "ELEAZAR MARTINEZ CASAS",
+        "edad": 41,
+        "altura": "1.75 m",
+        "sexo": "hombre",
+        "fecha_hechos": "2023-10-26",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: REDONDO, COLOR DE LA PIEL: MORENO, CABELLO: ENTRECANO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: GRUESOS, ESTATURA: 175cm, PESO: 80kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "504ACFE7-5C47-4692-BAB0-EC2F61B6C276.pdf",
+      "datos": {
+        "nombre": "CHRISTIAN GEOVANI REYES VERDIN",
+        "edad": 23,
+        "altura": "1.80 m",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "30/09/2023",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: GRANDE, LABIOS: GRUESOS, ESTATURA: 180cm, PESO: 70kg",
+        "senas_particulares": "LUNARES O MANCHAS,TATUAJE SIN ESPECIFICAR",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "6A03CD86-0940-4D28-92FB-B8B2031056BE.pdf",
+      "datos": {
+        "nombre": "GONZALO GARCIA PEREDA",
+        "edad": 33,
+        "altura": "160 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "27/10/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO, MEDIANO, LISO, OJOS: CAFÉS, MEDIANOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: DELGADOS",
+        "senas_particulares": "TATUAJE SIN ESPECIFICAR LADO DERECHO, TATUAJE SIN ESPECIFICAR LADO IZQUIERDO",
+        "prendas_vestir": "CAMISA, COLOR: BLANCO; SHORTS"
+      }
+    },
+    {
+      "archivo": "94B754D5-AF77-4E9B-8948-CAF07405EE95.pdf",
+      "datos": {
+        "nombre": "Antonio Cervantes Lopez",
+        "edad": 34,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "9A309A6F-96CB-4A41-98AE-088773CBC4E7.pdf",
+      "datos": {
+        "nombre": "EZEQUIEL MORENO SANTILLANES",
+        "edad": 52,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "ACF03D8B-1791-4D9A-9D4C-E720DC80E974.pdf",
+      "datos": {
+        "nombre": "GUSTAVO ALEJO PEINADO BARRAZA",
+        "edad": 32,
+        "altura": "159 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "25/10/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: REDONDO, COLOR DE LA PIEL: BLANCO, CABELLO: CASTAÑO OSCURO LARGO LISO, OJOS: CAFÉS PEQUEÑOS, NARIZ: RECTA, BOCA: PEQUENA, LABIOS: DELGADOS, PESO: 60kg",
+        "senas_particulares": "LUNARES O MANCHAS LADO UNICO",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "B51E266C-07AC-4757-8FA6-7AF7F72D08D1.pdf",
+      "datos": {
+        "nombre": "JOSE JESUS ESPINOZA BELTRAN",
+        "edad": 59,
+        "altura": "SIN DATO",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "13/10/2023",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "B86ECAF9-8E22-41F2-8D1B-DF177E844C6C.pdf",
+      "datos": {
+        "nombre": "ABEL RODRIGUEZ MEZA",
+        "edad": 38,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "B8A45461-9F32-4D69-9255-8947C70B5970.pdf",
+      "datos": {
+        "nombre": "JESUS SIQUEIROS ONTIVEROS",
+        "edad": 45,
+        "altura": "SIN DATO",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "17/10/2023",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "CE8842D7-41BF-4469-8489-F2A7982CCD15.pdf",
+      "datos": {
+        "nombre": "Victor Manuel Gomez Diaz",
+        "edad": 30,
+        "altura": "1.56 m",
+        "sexo": "hombre",
+        "fecha_hechos": "Sin dato",
+        "caracteristicas_fisicas": "Complexión: Delgado, Cara: Redondo, Color de la piel: Moreno, Ojos: Negros pequeños, Boca: Mediana, Labios: Delgado, Estatura: 156 cm, Peso: 50 kg",
+        "senas_particulares": "Cicatriz lado izquierdo",
+        "prendas_vestir": "Sin dato"
+      }
+    },
+    {
+      "archivo": "E56AC1A0-5EEB-43A5-B3CE-875B992BAC51.pdf",
+      "datos": {
+        "nombre": "RAMON ALFONSO GARCIA",
+        "edad": 67,
+        "altura": "155 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "19/10/2023",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: REDONDO, COLOR DE LA PIEL: MORENO, CABELLO: CANO CORTO ONDULADO, OJOS: CAFÉS MEDIANOS, NARIZ: ACHATADA, BOCA: MEDIANA, LABIOS: DELGADOS, PESO: 80kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "F3311C9F-CC21-440D-9101-923F22E73ED4.pdf",
+      "datos": {
+        "nombre": "JORGE ARIEL VALDIVIA BECERRA",
+        "edad": 32,
+        "altura": "170 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "18/10/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: MEDIANOS, PESO: 75 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "FEB67B8C-750A-429B-8693-FDEE520FF75C.pdf",
+      "datos": {
+        "nombre": "JESUS ALBERTO HERNANDEZ GARCIA",
+        "edad": 49,
+        "altura": "SIN DATO",
+        "sexo": "SIN DATO",
+        "fecha_hechos": "SIN DATO",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    }
+  ]
+}

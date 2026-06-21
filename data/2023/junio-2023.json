@@ -1,0 +1,189 @@
+{
+  "mes": "junio",
+  "anio": 2023,
+  "total_pdfs_procesados": 14,
+  "results": [
+    {
+      "archivo": "0ACAD2B0-E4D1-410A-9B88-1ABAC1A300F3.pdf",
+      "datos": {
+        "nombre": "MARIA IMELDA VALDEZ MARTINEZ",
+        "edad": 40,
+        "altura": "166 cm",
+        "sexo": "mujer",
+        "fecha_hechos": "2023-10-20",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: REDONDO, COLOR DE LA PIEL: BLANCO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: MEDIANOS, PESO: 70 kg",
+        "senas_particulares": "ARETES/PERFORACIONES LADO UNICO, CICATRIZ LADO UNICO",
+        "prendas_vestir": "BLUSA, PANTIBLUSA, BLUSON, COLOR: BLANCO; PANTALÓN, COLOR: AZUL CIELO"
+      }
+    },
+    {
+      "archivo": "0C0AE478-9E69-4AF1-BE28-2168DB849B6E.pdf",
+      "datos": {
+        "nombre": "LUIS ALBERTO ARMENTA ESTRADA",
+        "edad": 31,
+        "altura": "175 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "20/06/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: NEGRO LARGO LISO, OJOS: CAFÉS GRANDES, NARIZ: ACHATADA, BOCA: MEDIANA, LABIOS: DELGADOS, PESO: 78 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PRENDA DE VESTIR: PLAYERA, COLOR: GRIS"
+      }
+    },
+    {
+      "archivo": "229931D5-DD5B-4FC9-B3A0-1B64F1A91A1F.pdf",
+      "datos": {
+        "nombre": "JOSE OSUNA HEREDIA",
+        "edad": 70,
+        "altura": "SIN DATO",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "05/05/2023",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "42AF8C96-71E2-4EAD-A0A0-87023D027605.pdf",
+      "datos": {
+        "nombre": "CARLOS MIGUEL HERNANDEZ OCHOA",
+        "edad": 25,
+        "altura": "176cm",
+        "sexo": "hombre",
+        "fecha_hechos": "15/06/1992",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO ONDULADO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: MEDIANOS",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "5517818C-2B10-4E33-B085-A3CC84D8B9AF.pdf",
+      "datos": {
+        "nombre": "ANGEL RUBEN LOPEZ CHAVEZ",
+        "edad": 31,
+        "altura": "170 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "16/06/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO ONDULADO, OJOS: CAFÉS PEQUEÑOS, NARIZ: ACHATADA, BOCA: MEDIANA, LABIOS: GRUESOS, PESO: 65 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "PLAYERA, COLOR: VERDE OBSCURO"
+      }
+    },
+    {
+      "archivo": "6756786E-9D97-416D-937F-669B7D9D281F.pdf",
+      "datos": {
+        "nombre": "EDGAR FRANCISCO OSUNA MONTAÑO",
+        "edad": 48,
+        "altura": "",
+        "sexo": "",
+        "fecha_hechos": "",
+        "caracteristicas_fisicas": "SIN DATO",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "7127BCD3-99D0-49D4-B215-73D41A07E566.pdf",
+      "datos": {
+        "nombre": "PEDRO HUIZAR DELGADO",
+        "edad": 63,
+        "altura": "160 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "15/11/2022",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: RECTANGULAR, COLOR DE LA PIEL: MORENO, CABELLO: ENTRECANO CORTO ONDULADO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTAS, BOCA: MEDIANA, LABIOS: DELGADOS",
+        "senas_particulares": "OTRO SIN ESPECIFICAR",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "9ABABB77-09FA-47D5-94B9-B2278D6AD337.pdf",
+      "datos": {
+        "nombre": "EDGAR ANTONIO VAZQUEZ AVALOS",
+        "edad": 27,
+        "altura": "170 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "05/06/2023",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE PELOS: CABELLO CASTAÑO OSCURO MEDIANO LISO, OJOS: CAFÉS PEQUEÑOS, BOCA: MEDIANA, LABIOS: MEDIANOS, PESO: 75 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "AEE29A8A-0962-47B1-B5EF-66A9F6E0C343.pdf",
+      "datos": {
+        "nombre": "JOSE ANGEL JAQUEZ VALDEZ",
+        "edad": 9,
+        "altura": "120 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "01/05/2023",
+        "caracteristicas_fisicas": "COMPLEXION: ROBUSTA, CARA: REDONDO, COLOR DE LA PIEL: BLANCO, CABELLO: CASTAÑO CLARO CORTO LISO, OJOS: CAFÉS PEQUEÑOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: MEDIANOS, PESO: 30 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "B2ED07E5-12F6-49A7-8A63-C6818C5571D9.pdf",
+      "datos": {
+        "nombre": "FRANCISCO JAVIER SALAS RUIZ",
+        "edad": 53,
+        "altura": "168 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "",
+        "caracteristicas_fisicas": "COMPLEXION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: MEDIANOS",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "CAMISA COLOR: AZUL, PANTALÓN COLOR: NEGRO, TENIS COLOR: NEGRO"
+      }
+    },
+    {
+      "archivo": "C0C1EB38-5EE5-4914-87A3-6A80C5D9D5DB.pdf",
+      "datos": {
+        "nombre": "BRAYANS RAFAEL REYES GARCIA",
+        "edad": 36,
+        "altura": "160cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "18/06/2023",
+        "caracteristicas_fisicas": "DELGAZADA, OVALADO, MORENO, CABELLO CASTAÑO OSCURO CORTO LISO, OJOS CAFÉS MEDIANOS, NARIZ RECTA, BOCA MEDIANA, LABIOS DELGADOS",
+        "senas_particulares": "DEFECTO FISICO LADO DERECHO, TATUAJE EN BRAZO LADO IZQUIERDO, TATUAJE EN ANTEBRAZO LADO DERECHO, ARETES/PERFORACIONES LADO DERECHO, ARETES/PERFORACIONES LADO IZQUIERDO, TATUAJE EN ANTEBRAZO LADO IZQUIERDO, CICATRIZ LADO DERECHO, CIRCUNCISION LADO UNICO, CICATRIZ SIN ESPECIFICAR LADO UNICO, TATUAJE LADO UNICO, TATUAJE EN MANO LADO IZQUIERDO",
+        "prendas_vestir": "CAMISA COLOR BLANCO, SHORTS COLOR BLANCO, ZAPATOS COLOR NEGRO"
+      }
+    },
+    {
+      "archivo": "CF781016-8C12-45FB-846B-3316B3081278.pdf",
+      "datos": {
+        "nombre": "LEOPOLDO MORA QUEVEDO",
+        "edad": 61,
+        "altura": "155 cm",
+        "sexo": "HOMBRE",
+        "fecha_hechos": "22/08/2017",
+        "caracteristicas_fisicas": "COMPLEJION: DELGADA, CARA: OVALADO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO CORTO ONDULADO, OJOS: CAFÉS PEQUEÑOS, NARIZ: RECTA, BOCA: MEDIANA, LABIOS: MEDIANOS, PESO: 65 kg",
+        "senas_particulares": "NINGUNA",
+        "prendas_vestir": "SIN DATO"
+      }
+    },
+    {
+      "archivo": "D5211D00-A683-4789-8221-FD75CCF15DF1.pdf",
+      "datos": {
+        "nombre": "Santiago Espino Hernandez",
+        "edad": 21,
+        "altura": "150 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "No especificada",
+        "caracteristicas_fisicas": "Complexión: mediana, cara: ovalado, color de la piel: moreno, cabello: negro mediano liso, ojos: cafés medianos, nariz: recta, boca: mediana, labios: medianos.",
+        "senas_particulares": "Tatuaje en brazo lado derecho",
+        "prendas_vestir": "Camisa, color: negro; Pantalón, color: negro; Tenis, color: café"
+      }
+    },
+    {
+      "archivo": "E38642B6-529B-4CD6-BD03-3750C20B243C.pdf",
+      "datos": {
+        "nombre": "EDILBERTO HERNANDEZ GAXIOLA",
+        "edad": 29,
+        "altura": "178 cm",
+        "sexo": "hombre",
+        "fecha_hechos": "12/02/2023",
+        "caracteristicas_fisicas": "COMPLEXION: MEDIANA, CARA: REDONDO, COLOR DE LA PIEL: MORENO, CABELLO: CASTAÑO OSCURO MEDIANO LISO, OJOS: CAFÉS MEDIANOS, NARIZ: ACHATADA, BOCA: MEDIANA, LABIOS: DELGADOS, PESO: 70kg",
+        "senas_particulares": "CICATRIZ SIN ESPECIFICAR, LUNARES O MANCHAS, TATUAJE SIN ESPECIFICAR LADO DERECHO",
+        "prendas_vestir": "PANTALÓN, COLOR: AZUL MARINO; SACO, COLOR: NEGRO; ZAPATOS, COLOR: CAFÉ"
+      }
+    }
+  ]
+}

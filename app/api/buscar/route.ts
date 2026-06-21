@@ -22,8 +22,8 @@ export async function POST(req: Request) {
     estatura:
       body.estatura != null && body.estatura !== "" ? Number(body.estatura) : null,
     fecha_desaparicion: String(body.fecha_desaparicion ?? "1900-01-01"),
-    ultimo_lugar_id: null,
     estado: body.estado ? String(body.estado) : null,
+    municipio: body.municipio ? String(body.municipio) : null,
     rasgos: body.rasgos ? String(body.rasgos) : null,
   };
 
@@ -39,7 +39,7 @@ export async function POST(req: Request) {
   if (persona.sexo === "Masculino" || persona.sexo === "Femenino") {
     base = base.in("sexo", [persona.sexo, "Indeterminado"]);
   }
-  if (/^\d{4}-\d{2}-\d{2}$/.test(persona.fecha_desaparicion)) {
+  if (persona.fecha_desaparicion && /^\d{4}-\d{2}-\d{2}$/.test(persona.fecha_desaparicion)) {
     base = base.gte("fecha_hallazgo", persona.fecha_desaparicion);
   }
 
@@ -77,8 +77,8 @@ export async function POST(req: Request) {
         edad_final: r.edad_final,
         estatura: r.estatura,
         fecha_hallazgo: r.fecha_hallazgo,
-        lugar_hallazgo_id: null,
         estado: r.lugar_hallazgo?.estado ?? null,
+        municipio: r.lugar_hallazgo?.municipio ?? null,
         rasgos: r.rasgos,
       };
       const res = puntuar(persona, forense);

@@ -15,10 +15,6 @@ Ante la fragmentación de la información oficial, el software actuará como un 
 
 Bases de datos forenses oficiales y registros gubernamentales.
 
-Portales de noticias locales y "nota roja" (reportes de hallazgos en tiempo real).
-
-Redes sociales de colectivos de búsqueda (Facebook, X, Instagram).
-
 Foros y bases de datos abiertas de la sociedad civil y el periodismo de investigación.
 
 Procesamiento de la Información (Inteligencia Artificial)

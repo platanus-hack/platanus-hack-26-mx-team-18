@@ -1,9 +1,7 @@
 /**
- * Motor de puntuación de coincidencias forenses.
+ * Motor de coincidencias persona <-> forense (lógica PURA, sin base de datos).
  *
- * Compara un reporte de persona desaparecida (datos ANTE MORTEM) contra un
- * registro de restos no identificados (datos POST MORTEM) y devuelve un
- * puntaje de 0 a 100 que estima qué tan probable es que sean la misma persona.
+ * Dos etapas:
  *
  * Idea central (del documento del proyecto): no todas las características valen
  * igual. Un tatuaje o una seña particular es MUCHO más identificante que el
@@ -55,30 +53,41 @@ const TECHO_SIN_SEÑAS = 75;
 const MINIMO_RELEVANTE = 8;
 
 // ---------------------------------------------------------------------------
-// Tipos de entrada (solo los campos que necesita el motor).
+// Tipos de entrada (solo los campos que necesita el motor). El `estado` y el
+// `municipio` se resuelven desde la tabla `lugares` antes de llamar al motor.
 // ---------------------------------------------------------------------------
 export interface PersonaAM {
   id: number;
-  sexo: string;
-  edad: number | null;
-  estatura: number | null;
-  fecha_desaparicion: string; // "YYYY-MM-DD"
-  ultimo_lugar_id: number | null;
-  estado: string | null; // estado del último lugar, resuelto desde `lugares`
-  rasgos: unknown; // jsonb (puede ser texto u objeto)
+  sexo: string; // "Masculino" | "Femenino" | "Indeterminado" | null
+  edad: number | null; // dato puntual (min = max = edad)
+  estatura: number | null; // cm
+  fecha_desaparicion: string | null; // "YYYY-MM-DD"
+  estado: string | null; // estado del último lugar visto
+  municipio: string | null; // municipio del último lugar visto
+  rasgos: unknown; // jsonb (texto u objeto con tatuajes/señas)
 }
 
 export interface ForensePM {
   id: number;
   sexo: string;
-  edad_inicial: number | null;
-  edad_final: number | null;
-  estatura: number | null;
-  fecha_hallazgo: string; // "YYYY-MM-DD"
-  lugar_hallazgo_id: number | null;
-  estado: string | null; // estado del lugar de hallazgo, resuelto desde `lugares`
+  edad_inicial: number | null; // rango estimado del forense...
+  edad_final: number | null; // ...(min, max)
+  estatura: number | null; // cm
+  fecha_hallazgo: string | null; // "YYYY-MM-DD"
+  estado: string | null; // estado del lugar de hallazgo
+  municipio: string | null; // municipio del lugar de hallazgo
   rasgos: unknown; // jsonb (objeto: {tatuajes, senas_particulares, ...})
 }
+
+/** Resultado de un campo: si fue comparable, su similitud y una explicación. */
+export interface CampoScore {
+  comparable: boolean;
+  similitud: number | null; // 0..1 cuando comparable; null si no comparable
+  peso: number; // peso del campo (informativo, para auditar)
+  explicacion: string; // por qué ese número (o por qué no comparable)
+}
+
+export type Desglose = Record<Campo, CampoScore>;
 
 export interface Resultado {
   puntaje: number; // 0 a 100 (porcentaje de compatibilidad)
@@ -87,18 +96,78 @@ export interface Resultado {
 }
 
 // ---------------------------------------------------------------------------
-// Utilidades de texto para comparar rasgos.
+// Utilidades.
 // ---------------------------------------------------------------------------
 
-/** Quita acentos y pasa a minúsculas: "Antebrazó" -> "antebrazo". */
-function normalizar(texto: string): string {
+/** Minúsculas y sin acentos: "Antebrazó" -> "antebrazo". null/"" -> "". */
+function normalizar(texto: string | null | undefined): string {
+  if (!texto) return "";
   return texto
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[̀-ͯ]/g, ""); // marcas de acento combinantes
+    .replace(/[̀-ͯ]/g, "") // marcas de acento combinantes
+    .trim();
 }
 
-// Palabras demasiado comunes o genéricas: no aportan a la identificación.
+/** Un sexo solo es comparable si se conoce y no es "Indeterminado". */
+function sexoConocido(s: string | null | undefined): boolean {
+  const n = normalizar(s);
+  return n === "masculino" || n === "femenino";
+}
+
+/** Parsea "YYYY-MM-DD" a milisegundos; null si falta o es inválida. */
+function fechaMs(f: string | null | undefined): number | null {
+  if (!f) return null;
+  const ms = Date.parse(f);
+  return Number.isFinite(ms) ? ms : null;
+}
+
+const MS_DIA = 86_400_000;
+
+function clamp01(x: number): number {
+  return x < 0 ? 0 : x > 1 ? 1 : x;
+}
+
+const noComparable = (peso: number, explicacion: string): CampoScore => ({
+  comparable: false,
+  similitud: null,
+  peso,
+  explicacion,
+});
+
+// ---------------------------------------------------------------------------
+// Extracción del PERFIL de tatuajes/señas desde `rasgos` (jsonb).
+//
+// En lugar de aplanar todo en una sola bolsa de palabras (que confunde QUÉ es
+// el tatuaje con DÓNDE está), separamos el texto en tres conjuntos, todos
+// independientes del orden en que aparezcan los tatuajes:
+//   - figuras: el dibujo/leyenda (águila, rosa, un nombre, una cruz…).
+//   - zonas:   región corporal CANÓNICA (antebrazo y muñeca -> "brazo", etc.).
+//   - lados:   "izquierdo" / "derecho".
+//   - reporto: la fuente DIO información de tatuajes/señas (algún conjunto != ∅).
+// `reporto` permite tratar "una fuente reportó y la otra no" como NO comparable.
+// ---------------------------------------------------------------------------
+
+/** Perfil de señas de una fuente, separado por dimensión (orden-independiente). */
+export interface PerfilRasgos {
+  reporto: boolean;
+  figuras: Set<string>;
+  zonas: Set<string>;
+  lados: Set<string>;
+}
+
+// Campos del jsonb que consideramos "tatuajes / señas particulares".
+const CLAVES_RASGOS = [
+  "tatuajes",
+  "senas_particulares",
+  "senales_particulares",
+  "senas",
+  "señas",
+  "marcas",
+  "cicatrices",
+];
+
+// Palabras genéricas que no identifican: se descartan al tokenizar texto libre.
 const VACIAS = new Set([
   "para", "como", "pero", "porque", "este", "esta", "esto", "esos", "esas",
   "unos", "unas", "una", "uno", "del", "los", "las", "con", "sin", "que",
@@ -112,13 +181,54 @@ const VACIAS = new Set([
   "varias", "diversos", "diversas", "tiene", "tienen", "aparente", "mismo",
 ]);
 
-/** Convierte un texto en un conjunto de palabras clave significativas. */
-export function tokens(texto: string): Set<string> {
-  const set = new Set<string>();
+// Token (ya normalizado, sin acentos) -> región corporal canónica. Agrupa
+// sinónimos y partes contiguas para que "antebrazo" y "muñeca" cuenten como la
+// misma zona que "brazo", etc.
+const ZONA_CANON: Record<string, string> = {
+  brazo: "brazo", brazos: "brazo", antebrazo: "brazo", antebrazos: "brazo",
+  bicep: "brazo", biceps: "brazo", triceps: "brazo", hombro: "brazo",
+  hombros: "brazo", codo: "brazo", muneca: "brazo", munecas: "brazo",
+  mano: "mano", manos: "mano", dedo: "mano", dedos: "mano", palma: "mano",
+  nudillo: "mano", nudillos: "mano",
+  pierna: "pierna", piernas: "pierna", muslo: "pierna", muslos: "pierna",
+  pantorrilla: "pierna", rodilla: "pierna", rodillas: "pierna", gemelo: "pierna",
+  tobillo: "pierna",
+  pie: "pie", pies: "pie", talon: "pie", empeine: "pie",
+  pecho: "torso", torax: "torso", abdomen: "torso", vientre: "torso",
+  estomago: "torso", costado: "torso", costilla: "torso", costillas: "torso",
+  busto: "torso", seno: "torso", senos: "torso", ombligo: "torso",
+  espalda: "espalda", omoplato: "espalda", lumbar: "espalda", columna: "espalda",
+  escapula: "espalda",
+  cuello: "cuello", nuca: "cuello", garganta: "cuello",
+  cara: "cara", rostro: "cara", mejilla: "cara", mejillas: "cara",
+  frente: "cara", menton: "cara", barbilla: "cara", ceja: "cara", cejas: "cara",
+  labio: "cara", labios: "cara", oreja: "cara", orejas: "cara", nariz: "cara",
+  pomulo: "cara", parpado: "cara",
+  cabeza: "cabeza", craneo: "cabeza",
+  gluteo: "gluteo", gluteos: "gluteo", nalga: "gluteo", nalgas: "gluteo",
+  cadera: "gluteo", caderas: "gluteo",
+};
+
+// Token -> lado canónico.
+const LADO_CANON: Record<string, string> = {
+  izquierdo: "izquierdo", izquierda: "izquierdo", izq: "izquierdo",
+  derecho: "derecho", derecha: "derecho", der: "derecho",
+};
+
+/**
+ * Clasifica cada palabra de un texto libre en su dimensión: primero lado, luego
+ * zona corporal (sinónimos canonizados); si no es ninguna y es significativa
+ * (>=4 letras, no vacía) se considera FIGURA (el qué del tatuaje).
+ */
+function clasificarTexto(texto: string | null | undefined, perfil: PerfilRasgos): void {
   for (const palabra of normalizar(texto).split(/[^a-z0-9ñ]+/)) {
-    if (palabra.length >= 4 && !VACIAS.has(palabra)) set.add(palabra);
+    if (!palabra) continue;
+    const lado = LADO_CANON[palabra];
+    if (lado) { perfil.lados.add(lado); continue; }
+    const zona = ZONA_CANON[palabra];
+    if (zona) { perfil.zonas.add(zona); continue; }
+    if (palabra.length >= 4 && !VACIAS.has(palabra)) perfil.figuras.add(palabra);
   }
-  return set;
 }
 
 /**
@@ -139,31 +249,77 @@ export function textoDeRasgos(rasgos: unknown, claves?: string[]): string {
   if (typeof rasgos === "string") return rasgos;
   if (typeof rasgos === "object") {
     const obj = rasgos as Record<string, unknown>;
-    const valores = claves ? claves.map((k) => obj[k]) : Object.values(obj);
-    return valores.filter((v): v is string => typeof v === "string").join(" ");
+    for (const clave of CLAVES_RASGOS) {
+      const valor = obj[clave];
+      if (valor == null) continue;
+
+      if (typeof valor === "string") {
+        clasificarTexto(valor, perfil);
+      } else if (Array.isArray(valor)) {
+        // Tatuajes estructurados: arreglo de {tipo, ubicacion, lado} o strings.
+        for (const item of valor) {
+          if (typeof item === "string") {
+            clasificarTexto(item, perfil);
+          } else if (item && typeof item === "object") {
+            const it = item as Record<string, unknown>;
+            clasificarTexto(String(it.tipo ?? it.descripcion ?? ""), perfil);
+            clasificarTexto(String(it.ubicacion ?? it.ubicacion_cuerpo ?? it.zona ?? ""), perfil);
+            clasificarTexto(String(it.lado ?? it.lateralidad ?? ""), perfil);
+          }
+        }
+      }
+    }
   }
-  return String(rasgos);
+
+  perfil.reporto = perfil.figuras.size > 0 || perfil.zonas.size > 0 || perfil.lados.size > 0;
+  return perfil;
 }
 
-/** Calcula directamente las palabras clave de los rasgos de un forense. */
-export function tokensForense(forense: ForensePM): Set<string> {
-  return tokens(textoDeRasgos(forense.rasgos, ["tatuajes", "senas_particulares"]));
+/** Coeficiente de solapamiento |a∩b| / |conjunto mayor| (0 si alguno es ∅). */
+function solapa(a: Set<string>, b: Set<string>): number {
+  if (a.size === 0 || b.size === 0) return 0;
+  let inter = 0;
+  for (const x of a) if (b.has(x)) inter++;
+  return inter / Math.max(a.size, b.size);
 }
 
-/** Calcula las palabras clave de los rasgos de una persona. */
-export function tokensPersona(persona: PersonaAM): Set<string> {
-  return tokens(textoDeRasgos(persona.rasgos));
-}
-
-const sexoConocido = (s: string) => s === "Masculino" || s === "Femenino";
-
-/** ¿Es el mismo estado? Compara sin acentos ni mayúsculas ("JALISCO" == "Jalisco"). */
-function mismoEstado(a: string, b: string): boolean {
-  return normalizar(a.trim()) === normalizar(b.trim());
+/** ¿Comparten al menos un elemento? */
+function intersecta(a: Set<string>, b: Set<string>): boolean {
+  for (const x of a) if (b.has(x)) return true;
+  return false;
 }
 
 // ---------------------------------------------------------------------------
-// Función principal de puntuación.
+// BLOCKING. Genera candidatos: descarta pares imposibles, deja pasar el resto.
+// ---------------------------------------------------------------------------
+export function pasaBlocking(persona: PersonaAM, forense: ForensePM): BlockingResultado {
+  // 1) Mismo sexo. Si alguno es null o "Indeterminado", dejar pasar.
+  if (sexoConocido(persona.sexo) && sexoConocido(forense.sexo)) {
+    if (normalizar(persona.sexo) !== normalizar(forense.sexo)) {
+      return { pasa: false, razon: "sexos distintos" };
+    }
+  }
+
+  // 2) Mismo estado normalizado, cuando AMBOS lo tengan.
+  const ep = normalizar(persona.estado);
+  const ef = normalizar(forense.estado);
+  if (ep && ef && ep !== ef) {
+    return { pasa: false, razon: "estados distintos" };
+  }
+
+  // 3) Imposible hallar el cuerpo ANTES de la desaparición. Si falta alguna
+  //    fecha, no descartar.
+  const desap = fechaMs(persona.fecha_desaparicion);
+  const hallazgo = fechaMs(forense.fecha_hallazgo);
+  if (desap != null && hallazgo != null && hallazgo < desap) {
+    return { pasa: false, razon: "hallazgo anterior a la desaparición" };
+  }
+
+  return { pasa: true, razon: "candidato" };
+}
+
+// ---------------------------------------------------------------------------
+// Score por campo.
 // ---------------------------------------------------------------------------
 
 /**
@@ -217,6 +373,14 @@ export function puntuar(
       }
     }
   }
+  const igual = normalizar(p.sexo) === normalizar(f.sexo);
+  return {
+    comparable: true,
+    similitud: igual ? 1 : 0,
+    peso,
+    explicacion: igual ? `coincide (${p.sexo})` : `distinto (${p.sexo} vs ${f.sexo})`,
+  };
+}
 
   // --- Estatura: cuanto más parecida, más fracción del peso ---
   if (persona.estatura != null && forense.estatura != null) {
@@ -231,6 +395,8 @@ export function puntuar(
       razones.push(`estatura parecida (${persona.estatura} vs ${forense.estatura} cm)`);
     }
   }
+  const lo = Math.min(fa, fb);
+  const hi = Math.max(fa, fb);
 
   // --- Lugar: mismo estado. Señal SUAVE (suma, nunca descarta): es común que
   // alguien desaparezca en un estado y sus restos aparezcan en otro. ---
@@ -241,6 +407,15 @@ export function puntuar(
       razones.push(`mismo estado (${forense.estado})`);
     }
   }
+  const dist = p.edad < lo ? lo - p.edad : p.edad - hi;
+  const sim = clamp01(1 - dist / EDAD_DECAE_EN);
+  return {
+    comparable: true,
+    similitud: sim,
+    peso,
+    explicacion: `edad ${p.edad} a ${dist} año(s) del rango ${lo}-${hi}`,
+  };
+}
 
   // --- Cercanía temporal: hallazgo poco después de la desaparición = más probable ---
   const dias =
@@ -253,6 +428,17 @@ export function puntuar(
       if (años <= 1) razones.push("hallazgo dentro del primer año");
     }
   }
+  // La coherencia (hallazgo >= desaparición) ya se filtró en blocking; aquí
+  // solo medimos cercanía. El clamp protege ante pares no filtrados.
+  const dias = Math.max(0, Math.round((hallazgo - desap) / MS_DIA));
+  const sim = clamp01(1 - dias / FECHA_DECAE_EN);
+  return {
+    comparable: true,
+    similitud: sim,
+    peso,
+    explicacion: `${dias} día(s) entre desaparición y hallazgo`,
+  };
+}
 
   // --- Rasgos: señas/tatuajes en común (lo más identificante) ---
   // Solo es "comparable" si AMBOS describieron rasgos. Si coincide al menos una
@@ -271,6 +457,110 @@ export function puntuar(
       razones.push(`señas en común: ${comunes.slice(0, 6).join(", ")}`);
     }
   }
+  const mp = normalizar(p.municipio);
+  const mf = normalizar(f.municipio);
+  if (mp && mf && mp === mf) {
+    return { comparable: true, similitud: 1, peso, explicacion: `mismo municipio (${p.municipio})` };
+  }
+  return {
+    comparable: true,
+    similitud: 0.5,
+    peso,
+    explicacion: `mismo estado (${p.estado}), municipio distinto o desconocido`,
+  };
+}
+
+function scoreTatuajes(p: PersonaAM, f: ForensePM, pre?: PreCalculo): CampoScore {
+  const peso = PESOS.tatuajes;
+  const a = pre?.rasgosPersona ?? perfilRasgos(p.rasgos);
+  const b = pre?.rasgosForense ?? perfilRasgos(f.rasgos);
+
+  // No comparable si NINGUNA reportó señas.
+  if (!a.reporto && !b.reporto) {
+    return noComparable(peso, "no comparable: ninguna fuente reportó tatuajes/señas");
+  }
+  // Si SOLO una reportó, la ausencia en la otra no es evidencia (familias y
+  // peritos registran subconjuntos distintos): se EXCLUYE, no se penaliza.
+  if (!a.reporto || !b.reporto) {
+    return noComparable(peso, "no comparable: solo una fuente reportó tatuajes/señas");
+  }
+
+  // Ambas reportaron: comparar dimensión por dimensión, solo las que ambas
+  // fuentes informan. La FIGURA pesa más (señal fuerte); zona y lado matizan.
+  const comps: { sim: number; w: number }[] = [];
+  const detalle: string[] = [];
+
+  if (a.figuras.size && b.figuras.size) {
+    const sim = solapa(a.figuras, b.figuras);
+    comps.push({ sim, w: SUBPESO_FIGURA });
+    detalle.push(`figura ${sim.toFixed(2)}`);
+  }
+  if (a.zonas.size && b.zonas.size) {
+    const sim = solapa(a.zonas, b.zonas);
+    comps.push({ sim, w: SUBPESO_ZONA });
+    detalle.push(`zona ${sim.toFixed(2)}`);
+  }
+  // El lado solo aporta si además comparten zona (un "izquierdo" de brazo no
+  // dice nada frente a un "derecho" de pierna).
+  if (a.lados.size && b.lados.size && intersecta(a.zonas, b.zonas)) {
+    const sim = intersecta(a.lados, b.lados) ? 1 : 0.3;
+    comps.push({ sim, w: SUBPESO_LADO });
+    detalle.push(`lado ${sim.toFixed(2)}`);
+  }
+
+  // Ambas reportaron pero en dimensiones que no se solapan (p.ej. una solo dio
+  // figura y la otra solo zona): no hay base de comparación -> no comparable.
+  if (comps.length === 0) {
+    return noComparable(peso, "no comparable: señas descritas en dimensiones distintas");
+  }
+
+  const pesoTotal = comps.reduce((s, c) => s + c.w, 0);
+  const bruta = comps.reduce((s, c) => s + c.sim * c.w, 0) / pesoTotal;
+  // Piso: un desacuerdo de señas es evidencia débil, nunca motivo de descarte.
+  const sim = Math.max(PISO_TATUAJE, bruta);
+  if (sim > bruta) detalle.push(`piso ${PISO_TATUAJE}`);
+
+  return { comparable: true, similitud: sim, peso, explicacion: detalle.join(", ") };
+}
+
+// ---------------------------------------------------------------------------
+// Score final: promedio ponderado de los campos COMPARABLES.
+// ---------------------------------------------------------------------------
+
+/** Perfiles de rasgos ya calculados, para acelerar lotes grandes. */
+export interface PreCalculo {
+  rasgosPersona?: PerfilRasgos;
+  rasgosForense?: PerfilRasgos;
+}
+
+export function puntuar(persona: PersonaAM, forense: ForensePM, pre?: PreCalculo): Resultado {
+  const desglose: Desglose = {
+    tatuajes: scoreTatuajes(persona, forense, pre),
+    sexo: scoreSexo(persona, forense),
+    edad: scoreEdad(persona, forense),
+    estatura: scoreEstatura(persona, forense),
+    fecha: scoreFecha(persona, forense),
+    lugar: scoreLugar(persona, forense),
+  };
+
+  let numerador = 0;
+  let pesoComparable = 0;
+  for (const campo of Object.values(desglose)) {
+    if (campo.comparable && campo.similitud != null) {
+      numerador += campo.peso * campo.similitud;
+      pesoComparable += campo.peso;
+    }
+  }
+  const score = pesoComparable === 0 ? 0 : numerador / pesoComparable;
+
+  // Resumen corto legible (para la columna `razon`): campos comparables más
+  // fuertes primero.
+  const resumen =
+    Object.entries(desglose)
+      .filter(([, c]) => c.comparable)
+      .sort((a, b) => (b[1].similitud ?? 0) - (a[1].similitud ?? 0))
+      .map(([nombre, c]) => `${nombre}=${(c.similitud ?? 0).toFixed(2)}`)
+      .join(" ") || "sin campos comparables";
 
   // --- Normalización a porcentaje de compatibilidad ---
   const base = Math.max(evidencia, PISO_EVIDENCIA);

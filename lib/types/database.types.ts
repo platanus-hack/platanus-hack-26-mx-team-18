@@ -19,27 +19,33 @@ export type Database = {
       coincidencias: {
         Row: {
           creado_en: string;
+          desglose: Json | null;
           forense_id: number;
           id: number;
           persona_id: number;
           puntaje: number;
           razon: string | null;
+          score: number | null;
         };
         Insert: {
           creado_en?: string;
+          desglose?: Json | null;
           forense_id: number;
           id?: number;
           persona_id: number;
           puntaje: number;
           razon?: string | null;
+          score?: number | null;
         };
         Update: {
           creado_en?: string;
+          desglose?: Json | null;
           forense_id?: number;
           id?: number;
           persona_id?: number;
           puntaje?: number;
           razon?: string | null;
+          score?: number | null;
         };
         Relationships: [
           {

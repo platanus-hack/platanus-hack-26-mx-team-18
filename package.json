@@ -10,12 +10,13 @@
     "scrape:jalisco": "tsx scripts/scrape-jalisco.ts",
     "scrape:sinaloa": "tsx scripts/scrape-sinaloa.ts",
     "scrape:rnpdno": "tsx scripts/scrape-rnpdno.ts",
-    "match": "tsx scripts/match.ts",
-    "test:match": "tsx scripts/match.test.ts"
+    "scrape:firecrawl": "tsx scripts/scrape-firecrawl.ts",
+    "match": "tsx scripts/match.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.0",
     "@supabase/supabase-js": "^2.108.2",
+    "firecrawl": "^4.28.2",
     "next": "^16.2.9",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"

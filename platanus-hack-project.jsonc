@@ -12,5 +12,5 @@
   // Must be a valid URL, for example: https://my-project.vercel.app
   // If your project is an app, put the download link here instead
   // (for example, a URL to download an APK).
-  "deploy-url": "<FILL THIS>"
+  "deploy-url": "https://platanus-hack-26-mx-team-18-gamma.vercel.app/"
 }

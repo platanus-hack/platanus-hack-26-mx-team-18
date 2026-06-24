@@ -11,6 +11,7 @@
     "scrape:sinaloa": "tsx scripts/scrape-sinaloa.ts",
     "scrape:rnpdno": "tsx scripts/scrape-rnpdno.ts",
     "scrape:firecrawl": "tsx scripts/scrape-firecrawl.ts",
+    "scrape:x": "tsx scripts/scrape-x.ts",
     "match": "tsx scripts/match.ts"
   },
   "dependencies": {
